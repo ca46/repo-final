@@ -55,7 +55,7 @@ public class AdminUsersPage {
     public void selectUserType()
 	{ 
     	PageUtility pageutility=new PageUtility();
-    	pageutility.selectByIndex(usrtype, 2);          //  sc.selectByIndex(2);
+    	pageutility.selectByIndex(usrtype, 2);          
     }
     
     public void saveAdminUsers()

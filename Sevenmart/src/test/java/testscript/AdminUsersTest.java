@@ -20,9 +20,6 @@ public class AdminUsersTest extends Base{
 				
 		        String username=ExcelUtility.getStringData(1, 0, "loginpage");
 		        String password=ExcelUtility.getStringData(1, 1, "loginpage");
-		        
-		        //String user=ExcelUtility.getStringData(1, 0, "adminuserspage");
-				//String pass=ExcelUtility.getStringData(1, 1, "adminuserspage");
 				
 				LoginPage loginpage=new LoginPage(driver);
 				loginpage.enterTheUsername(username);
