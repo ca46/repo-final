@@ -15,7 +15,7 @@
       </run>
     </groups>
     <classes>
-      <class name="testscript.LoginTest" />
+      <class name="testscript.ManageCategoryTest" />
     </classes>
   </test>
 
