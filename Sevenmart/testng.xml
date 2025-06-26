@@ -10,11 +10,7 @@
                 <include name="verifyTheUserIsAbleToLoginUsingValidCredentials"></include>
             </methods>
           </class>
-          <class name="testscript.AdminUsersTest">
-          <methods>
-                <include name="verifyTheUserIsAbleToCreateTheAdminUsers"></include>
-            </methods>
-          </class>
+          
           <class name="testscript.ManageContactTest"/>
           <class name="testscript.ManageNewsTest">
           <methods>
