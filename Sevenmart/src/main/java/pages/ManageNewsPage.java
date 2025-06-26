@@ -17,9 +17,6 @@ public class ManageNewsPage
 	@FindBy(xpath=" //textarea[@id='news']") WebElement enternews;
 	@FindBy(xpath=" //button[@name='create']") WebElement save;
 	@FindBy(xpath=" //div[@class='alert alert-success alert-dismissible']") WebElement alert;
-	   @FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/news/edit?edit=6377&page_ad=1']") WebElement edit;
-	   @FindBy(xpath="//button[@name='update']") WebElement update;
-	   @FindBy(xpath="//h5[text()=' Alert!']") WebElement alertmsg;
 
 	public ManageNewsPage(WebDriver driver)
 	{
@@ -51,6 +48,11 @@ public class ManageNewsPage
    {
 	 return alert.isDisplayed();
    }
+ 
+   @FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/news/edit?edit=6377&page_ad=1']") WebElement edit;
+   @FindBy(xpath="//button[@name='update']") WebElement update;
+   @FindBy(xpath="//h5[text()=' Alert!']") WebElement alertmsg;
+  
    public void editNews()
    {
 	   edit.click();
@@ -66,3 +68,4 @@ public class ManageNewsPage
 	   return alertmsg.isDisplayed();
    }
 }
+

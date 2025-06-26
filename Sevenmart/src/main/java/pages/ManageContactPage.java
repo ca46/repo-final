@@ -12,9 +12,9 @@ public class ManageContactPage
 	@FindBy(xpath="//input[@placeholder='Username']")WebElement uname;
 	@FindBy(xpath="//input[@placeholder='Password']")WebElement pword;
 	@FindBy(xpath="//button[@type='submit']")WebElement signin;
-	@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/list-contact']//parent::li/a")WebElement moreinfo;
-	@FindBy(xpath="//i[@class='fas fa-edit']//parent::a/i")WebElement actn;
-	@FindBy(xpath="//input[@id='phone']")WebElement phn;
+	@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/list-contact']//parent::li/a")WebElement moreinfomcontact;
+	@FindBy(xpath="//i[@class='fas fa-edit']//parent::a/i")WebElement action;
+	@FindBy(xpath="//input[@id='phone']")WebElement phone;
 	@FindBy(xpath="//input[@id='email']")WebElement email; 
 	@FindBy(xpath="//textarea[@id='content']//parent::div/textarea[1]")WebElement address;
 	@FindBy(xpath="//button[@name='Update']")WebElement update;
@@ -30,17 +30,17 @@ public class ManageContactPage
 	
 	public void moreInfoManageContact()
 	{
-		moreinfo.click();
+		moreinfomcontact.click();
 	}
 	public void actionManageContact()
 	{
-		actn.click();
+		action.click();
 	}
 	
 	public void phonenumberManageContact(String phno)
 	{
-		phn.clear();
-		phn.sendKeys(phno);
+		phone.clear();
+		phone.sendKeys(phno);
 	}
 	
 	public void emailManageContact(String emailid)
@@ -57,7 +57,7 @@ public class ManageContactPage
 	public void updateManageContact()
 	{
 		PageUtility pageutility=new PageUtility();
-		pageutility.javaSriptClick(driver, update);                          
+		pageutility.javaSriptClick(driver, update);                            //update.click();
 	}
 	
 	public boolean isAlertMessageIsDisplayed()

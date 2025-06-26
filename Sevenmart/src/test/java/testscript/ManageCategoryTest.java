@@ -13,26 +13,27 @@ import utilities.ExcelUtility;
 @Test
 public class ManageCategoryTest extends Base{
     
-	@Test
+	@Test(retryAnalyzer=retry.Retry.class)
 	public void verifyTheUserIsAbleToAddCategoryInformations() throws IOException, AWTException
 	{
 
     	String username=ExcelUtility.getStringData(1, 0, "loginpage");
  		String password=ExcelUtility.getStringData(1, 1, "loginpage");
- 		String catgry=ExcelUtility.getStringData(1, 0,"managecategorypage");
 
  		LoginPage loginpage=new LoginPage(driver);
- 		loginpage.enterTheUsername(username);
+ 		loginpage.enterTheUserName(username);
  		loginpage.enterThePassword(password);
- 		loginpage.clickSigninButton();
+ 		loginpage.clickTheSignInButton();
+ 		
+ 		String catgry=ExcelUtility.getStringData(1, 0,"managecategorypage");
  		
  		ManageCategoryPage managecategory=new ManageCategoryPage(driver);
- 		managecategory.moreInfo();
+ 		managecategory.moreInfoManageCategory();
  		managecategory.newButton();
- 		managecategory.categoryInfo(catgry);
+ 		managecategory.categoryInformation(catgry);
  		managecategory.selectGroup();
  		managecategory.fileUpload();
- 		managecategory.saveInformations();
+ 		managecategory.saveCategoryInformations();
  		
  		boolean alertmsg=managecategory.isAlertMessageIsDisplayed();
  		Assert.assertTrue(alertmsg);

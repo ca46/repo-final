@@ -20,9 +20,9 @@ public class ManageFooterTest extends Base
 
 		
 		LoginPage loginpage=new LoginPage(driver);
-		loginpage.enterTheUsername(username);
+		loginpage.enterTheUserName(username);
 		loginpage.enterThePassword(password);
-		loginpage.clickSigninButton();
+		loginpage.clickTheSignInButton();
 		
 		String manageaddress=ExcelUtility.getStringData(1, 0, "footer");
 		String manageemail=ExcelUtility.getStringData(1, 1, "footer");
@@ -40,4 +40,3 @@ public class ManageFooterTest extends Base
 		Assert.assertTrue(alertmsg);
 	}
 }
-

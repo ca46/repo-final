@@ -18,10 +18,10 @@ public class LoginTest extends Base {
 		String username=ExcelUtility.getStringData(1, 0, "loginpage");
 		String password=ExcelUtility.getStringData(1, 1, "loginpage");
 		LoginPage loginpage=new LoginPage(driver);
-		loginpage.enterTheUsername(username);
+		loginpage.enterTheUserName(username);
 		loginpage.enterThePassword(password);
-		loginpage.clickSigninButton();
-		boolean dashboardloaded=loginpage.isdashboardDisplayed();
+		loginpage.clickTheSignInButton();
+		boolean dashboardloaded=loginpage.isDashBoardDisplayed();
 		Assert.assertTrue(dashboardloaded);
 	}
     @Test
@@ -33,45 +33,45 @@ public class LoginTest extends Base {
 		String username=ExcelUtility.getStringData(2, 0, "loginpage");
 		String password=ExcelUtility.getStringData(2, 1, "loginpage");
 		LoginPage loginpage=new LoginPage(driver);
-		loginpage.enterTheUsername(username);
+		loginpage.enterTheUserName(username);
 		loginpage.enterThePassword(password);
-		loginpage.clickSigninButton();
+		loginpage.clickTheSignInButton();
 		boolean alert=loginpage.isAlertMessageDisplayed();
 		Assert.assertTrue(alert);
 	}
 
-    /*@Test
+    @Test
     public void correctUsernameAndIncorrectPassword() throws IOException {
         String username = ExcelUtility.getStringData(3, 0, "loginpage");
         String password = ExcelUtility.getStringData(3, 1, "loginpage");
         LoginPage loginpage = new LoginPage(driver);
-        loginpage.enterTheUsername(username);
+        loginpage.enterTheUserName(username);
         loginpage.enterThePassword(password);
-        loginpage.clickSigninButton();
+        loginpage.clickTheSignInButton();
         boolean alert = loginpage.isAlertMessageDisplayed();
         Assert.assertTrue(alert);
     }
 
-    //@Test
+    @Test
     public void incorrectUsernameAndIncorrectPassword() throws IOException {
         String username = ExcelUtility.getStringData(4, 0, "loginpage");
         String password = ExcelUtility.getStringData(4, 1, "loginpage");
         LoginPage loginpage = new LoginPage(driver);
-        loginpage.enterTheUsername(username);
+        loginpage.enterTheUserName(username);
         loginpage.enterThePassword(password);
-        loginpage.clickSigninButton();
+        loginpage.clickTheSignInButton();
         boolean alert = loginpage.isAlertMessageDisplayed();
         Assert.assertTrue(alert);
     }
 
-   // @Test
+   @Test
     public void emptyUsernameAndPassword() throws IOException {
         String username = ExcelUtility.getStringData(5, 0, "loginpage");
         String password = ExcelUtility.getStringData(5, 1, "loginpage");
         LoginPage loginpage = new LoginPage(driver);
-        loginpage.enterTheUsername(username);
+        loginpage.enterTheUserName(username);
         loginpage.enterThePassword(password);
-        loginpage.clickSigninButton();
+        loginpage.clickTheSignInButton();
         boolean alert = loginpage.isAlertMessageDisplayed();
         Assert.assertTrue(alert);
     }
@@ -81,9 +81,9 @@ public class LoginTest extends Base {
         String username = ExcelUtility.getStringData(6, 0, "loginpage");
         String password = ExcelUtility.getStringData(6, 1, "loginpage");
         LoginPage loginpage = new LoginPage(driver);
-        loginpage.enterTheUsername(username);
+        loginpage.enterTheUserName(username);
         loginpage.enterThePassword(password);
-        loginpage.clickSigninButton();
+        loginpage.clickTheSignInButton();
         boolean alert = loginpage.isAlertMessageDisplayed();
         Assert.assertTrue(alert);
     }
@@ -93,10 +93,10 @@ public class LoginTest extends Base {
         String username = ExcelUtility.getStringData(7, 0, "loginpage");
         String password = ExcelUtility.getStringData(7, 1, "loginpage");
         LoginPage loginpage = new LoginPage(driver);
-        loginpage.enterTheUsername(username);
+        loginpage.enterTheUserName(username);
         loginpage.enterThePassword(password);
-        loginpage.clickSigninButton();
+        loginpage.clickTheSignInButton();
         boolean alert = loginpage.isAlertMessageDisplayed();
         Assert.assertTrue(alert);
-    }*/
+    }
 }

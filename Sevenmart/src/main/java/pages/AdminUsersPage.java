@@ -25,9 +25,6 @@ public class AdminUsersPage {
 	@FindBy(xpath="//select[@id='user_type']")WebElement usrtype;
 	@FindBy(xpath="//button[@name='Create']")WebElement savebtn;
 	@FindBy(xpath="//div[@class='alert alert-success alert-dismissible']")WebElement alertmsg;
-	@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/user/edit?edit=14548&page_ad=1']")WebElement edit;
-	@FindBy(xpath="//button[@name='Update']")WebElement update;
-	@FindBy(xpath="//h5[text()=' Alert!']")WebElement alert;
 	
 	public AdminUsersPage(WebDriver driver)
 	{
@@ -58,7 +55,7 @@ public class AdminUsersPage {
     public void selectUserType()
 	{ 
     	PageUtility pageutility=new PageUtility();
-    	pageutility.selectByIndex(usrtype, 2);          
+    	pageutility.selectByIndex(usrtype, 2);          //  sc.selectByIndex(2);
     }
     
     public void saveAdminUsers()
@@ -71,7 +68,9 @@ public class AdminUsersPage {
   	 return alertmsg.isDisplayed();
     }
     
- 
+    @FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/user/edit?edit=14548&page_ad=1']")WebElement edit;
+    @FindBy(xpath="//button[@name='Update']")WebElement update;
+    @FindBy(xpath="//h5[text()=' Alert!']")WebElement alert;
     
     public void editAdminUsers()
     {

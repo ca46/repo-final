@@ -15,14 +15,15 @@ public class ManageContactTest extends Base
      {
     	String username=ExcelUtility.getStringData(1, 0, "loginpage");
  		String password=ExcelUtility.getStringData(1, 1, "loginpage");
+
+ 		LoginPage loginpage=new LoginPage(driver);
+ 		loginpage.enterTheUserName(username);
+ 		loginpage.enterThePassword(password);
+ 		loginpage.clickTheSignInButton();
+ 		
  		String managephoneno=ExcelUtility.getIntegerData(1, 0, "contactpage");
  		String manageemail=ExcelUtility.getStringData(1, 1, "contactpage");
  		String manageaddress=ExcelUtility.getStringData(1, 2, "contactpage");
-
- 		LoginPage loginpage=new LoginPage(driver);
- 		loginpage.enterTheUsername(username);
- 		loginpage.enterThePassword(password);
- 		loginpage.clickSigninButton();
  		
  		ManageContactPage managecontactpage=new ManageContactPage(driver);
  		managecontactpage.moreInfoManageContact();
@@ -30,7 +31,9 @@ public class ManageContactTest extends Base
  		managecontactpage.phonenumberManageContact(managephoneno);
  		managecontactpage.emailManageContact(manageemail);
  		managecontactpage.addressManageContact(manageaddress);
- 		
+ 		managecontactpage.updateManageContact();
+ 		boolean alertmsg=managecontactpage.isAlertMessageIsDisplayed();
+		Assert.assertTrue(alertmsg);
        }
      @Test
      public void verifyTheUserIsAbleToDisplayContactUsInformations() throws IOException
@@ -39,9 +42,9 @@ public class ManageContactTest extends Base
   		String password=ExcelUtility.getStringData(1, 1, "loginpage");
 
   		LoginPage loginpage=new LoginPage(driver);
-  		loginpage.enterTheUsername(username);
+  		loginpage.enterTheUserName(username);
   		loginpage.enterThePassword(password);
-  		loginpage.clickSigninButton();
+  		loginpage.clickTheSignInButton();
   		
   		ManageContactPage managecontactpage=new ManageContactPage(driver);
  		managecontactpage.moreInfoManageContact();
@@ -52,4 +55,3 @@ public class ManageContactTest extends Base
 		Assert.assertTrue(alertmsg);
      }
 }
-
