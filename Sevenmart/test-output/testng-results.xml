@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+<testng-results retried="1" ignored="7" total="13" passed="5" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-06-26T18:57:04 IST" name="Suite" finished-at="2025-06-26T18:57:20 IST" duration-ms="16372">
+  <suite started-at="2025-06-26T20:06:44 IST" name="TestNG" finished-at="2025-06-26T20:07:40 IST" duration-ms="56136">
     <groups>
     </groups>
-    <test started-at="2025-06-26T18:57:04 IST" name="Test" finished-at="2025-06-26T18:57:20 IST" duration-ms="16372">
-      <class name="testscript.ManageCategoryTest">
-        <test-method is-config="true" signature="browserInitialisation(java.lang.String)[pri:0, instance:testscript.ManageCategoryTest@3e0e1046]" started-at="2025-06-26T18:57:04 IST" name="browserInitialisation" finished-at="2025-06-26T18:57:13 IST" duration-ms="8879" status="PASS">
+    <test started-at="2025-06-26T20:06:44 IST" name="Test" finished-at="2025-06-26T20:07:40 IST" duration-ms="56136">
+      <class name="testscript.ManageNewsTest">
+        <test-method is-config="true" signature="browserInitialisation(java.lang.String)[pri:0, instance:testscript.ManageNewsTest@489115ef]" started-at="2025-06-26T20:07:24 IST" name="browserInitialisation" finished-at="2025-06-26T20:07:27 IST" duration-ms="3177" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,7 +18,117 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- browserInitialisation -->
-        <test-method signature="verifyTheUserIsAbleToAddCategoryInformations()[pri:0, instance:testscript.ManageCategoryTest@3e0e1046]" started-at="2025-06-26T18:57:13 IST" name="verifyTheUserIsAbleToAddCategoryInformations" finished-at="2025-06-26T18:57:19 IST" duration-ms="6562" status="FAIL">
+        <test-method signature="verifyTheUserIsAbleToEnterTheNews()[pri:0, instance:testscript.ManageNewsTest@489115ef]" started-at="2025-06-26T20:07:27 IST" name="verifyTheUserIsAbleToEnterTheNews" finished-at="2025-06-26T20:07:30 IST" duration-ms="3133" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyTheUserIsAbleToEnterTheNews -->
+        <test-method is-config="true" signature="driverQuit(org.testng.ITestResult)[pri:0, instance:testscript.ManageNewsTest@489115ef]" started-at="2025-06-26T20:07:30 IST" name="driverQuit" finished-at="2025-06-26T20:07:31 IST" duration-ms="483" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyTheUserIsAbleToEnterTheNews status=SUCCESS method=ManageNewsTest.verifyTheUserIsAbleToEnterTheNews()[pri:0, instance:testscript.ManageNewsTest@489115ef] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- driverQuit -->
+      </class> <!-- testscript.ManageNewsTest -->
+      <class name="testscript.ManageFooterTest">
+        <test-method is-config="true" signature="browserInitialisation(java.lang.String)[pri:0, instance:testscript.ManageFooterTest@198b6731]" started-at="2025-06-26T20:07:31 IST" name="browserInitialisation" finished-at="2025-06-26T20:07:35 IST" duration-ms="4595" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserInitialisation -->
+        <test-method signature="verifyTheUserIsAbleToUpdateManageFooterTextInformation()[pri:0, instance:testscript.ManageFooterTest@198b6731]" started-at="2025-06-26T20:07:35 IST" name="verifyTheUserIsAbleToUpdateManageFooterTextInformation" finished-at="2025-06-26T20:07:39 IST" duration-ms="4055" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyTheUserIsAbleToUpdateManageFooterTextInformation -->
+        <test-method is-config="true" signature="driverQuit(org.testng.ITestResult)[pri:0, instance:testscript.ManageFooterTest@198b6731]" started-at="2025-06-26T20:07:39 IST" name="driverQuit" finished-at="2025-06-26T20:07:40 IST" duration-ms="408" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyTheUserIsAbleToUpdateManageFooterTextInformation status=SUCCESS method=ManageFooterTest.verifyTheUserIsAbleToUpdateManageFooterTextInformation()[pri:0, instance:testscript.ManageFooterTest@198b6731] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- driverQuit -->
+      </class> <!-- testscript.ManageFooterTest -->
+      <class name="testscript.ManageContactTest">
+        <test-method is-config="true" signature="browserInitialisation(java.lang.String)[pri:0, instance:testscript.ManageContactTest@15de0b3c]" started-at="2025-06-26T20:07:05 IST" name="browserInitialisation" finished-at="2025-06-26T20:07:10 IST" duration-ms="4804" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserInitialisation -->
+        <test-method signature="verifyTheUserIsAbleToDisplayContactUsInformations()[pri:0, instance:testscript.ManageContactTest@15de0b3c]" started-at="2025-06-26T20:07:10 IST" name="verifyTheUserIsAbleToDisplayContactUsInformations" finished-at="2025-06-26T20:07:15 IST" duration-ms="4788" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyTheUserIsAbleToDisplayContactUsInformations -->
+        <test-method is-config="true" signature="driverQuit(org.testng.ITestResult)[pri:0, instance:testscript.ManageContactTest@15de0b3c]" started-at="2025-06-26T20:07:15 IST" name="driverQuit" finished-at="2025-06-26T20:07:15 IST" duration-ms="635" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyTheUserIsAbleToDisplayContactUsInformations status=SUCCESS method=ManageContactTest.verifyTheUserIsAbleToDisplayContactUsInformations()[pri:0, instance:testscript.ManageContactTest@15de0b3c] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- driverQuit -->
+        <test-method is-config="true" signature="browserInitialisation(java.lang.String)[pri:0, instance:testscript.ManageContactTest@15de0b3c]" started-at="2025-06-26T20:07:15 IST" name="browserInitialisation" finished-at="2025-06-26T20:07:19 IST" duration-ms="3355" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserInitialisation -->
+        <test-method signature="verifyTheUserIsAbleToUpdateContactUsInformations()[pri:0, instance:testscript.ManageContactTest@15de0b3c]" started-at="2025-06-26T20:07:19 IST" name="verifyTheUserIsAbleToUpdateContactUsInformations" finished-at="2025-06-26T20:07:23 IST" duration-ms="4676" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyTheUserIsAbleToUpdateContactUsInformations -->
+        <test-method is-config="true" signature="driverQuit(org.testng.ITestResult)[pri:0, instance:testscript.ManageContactTest@15de0b3c]" started-at="2025-06-26T20:07:23 IST" name="driverQuit" finished-at="2025-06-26T20:07:24 IST" duration-ms="417" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyTheUserIsAbleToUpdateContactUsInformations status=SUCCESS method=ManageContactTest.verifyTheUserIsAbleToUpdateContactUsInformations()[pri:0, instance:testscript.ManageContactTest@15de0b3c] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- driverQuit -->
+      </class> <!-- testscript.ManageContactTest -->
+      <class name="testscript.AdminUsersTest">
+        <test-method is-config="true" signature="browserInitialisation(java.lang.String)[pri:0, instance:testscript.AdminUsersTest@6ed3ccb2]" started-at="2025-06-26T20:06:44 IST" name="browserInitialisation" finished-at="2025-06-26T20:06:50 IST" duration-ms="6809" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserInitialisation -->
+        <test-method retried="true" signature="verifyTheUserIsAbleToCreateTheAdminUsers()[pri:0, instance:testscript.AdminUsersTest@6ed3ccb2]" started-at="2025-06-26T20:06:51 IST" name="verifyTheUserIsAbleToCreateTheAdminUsers" finished-at="2025-06-26T20:06:57 IST" duration-ms="6545" status="SKIP">
           <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
               <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//div[@class='alert alert-success alert-dismissible']"}
@@ -27,9 +137,9 @@ For documentation on this error, please visit: https://www.selenium.dev/document
 Build info: version: '4.29.0', revision: '5fc1ec94cb'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.12'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [3c78ffdfbbed58d4567565a7aa049165, findElement {value=//div[@class='alert alert-success alert-dismissible'], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.120, chrome: {chromedriverVersion: 137.0.7151.119 (e0ac9d12dff..., userDataDir: C:\Users\91813\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59564}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59564/devtoo..., se:cdpVersion: 137.0.7151.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 3c78ffdfbbed58d4567565a7aa049165]]>
+Command: [0b306709d6e014f3b58f8c35b3e32cfc, findElement {using=xpath, value=//div[@class='alert alert-success alert-dismissible']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.120, chrome: {chromedriverVersion: 137.0.7151.119 (e0ac9d12dff..., userDataDir: C:\Users\91813\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61498}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61498/devtoo..., se:cdpVersion: 137.0.7151.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 0b306709d6e014f3b58f8c35b3e32cfc]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@class='alert alert-success alert-dismissible']"}
@@ -38,9 +148,9 @@ For documentation on this error, please visit: https://www.selenium.dev/document
 Build info: version: '4.29.0', revision: '5fc1ec94cb'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.12'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [3c78ffdfbbed58d4567565a7aa049165, findElement {value=//div[@class='alert alert-success alert-dismissible'], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.120, chrome: {chromedriverVersion: 137.0.7151.119 (e0ac9d12dff..., userDataDir: C:\Users\91813\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59564}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59564/devtoo..., se:cdpVersion: 137.0.7151.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 3c78ffdfbbed58d4567565a7aa049165
+Command: [0b306709d6e014f3b58f8c35b3e32cfc, findElement {using=xpath, value=//div[@class='alert alert-success alert-dismissible']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.120, chrome: {chromedriverVersion: 137.0.7151.119 (e0ac9d12dff..., userDataDir: C:\Users\91813\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61498}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61498/devtoo..., se:cdpVersion: 137.0.7151.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 0b306709d6e014f3b58f8c35b3e32cfc
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -59,9 +169,9 @@ at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:3
 at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
 at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
 at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at jdk.proxy2/jdk.proxy2.$Proxy15.isDisplayed(Unknown Source)
-at pages.ManageCategoryPage.isAlertMessageIsDisplayed(ManageCategoryPage.java:76)
-at testscript.ManageCategoryTest.verifyTheUserIsAbleToAddCategoryInformations(ManageCategoryTest.java:37)
+at jdk.proxy2/jdk.proxy2.$Proxy13.isDisplayed(Unknown Source)
+at pages.AdminUsersPage.displayAlertMessage(AdminUsersPage.java:68)
+at testscript.AdminUsersTest.verifyTheUserIsAbleToCreateTheAdminUsers(AdminUsersTest.java:42)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -95,19 +205,45 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyTheUserIsAbleToAddCategoryInformations -->
-        <test-method is-config="true" signature="browserQuit(org.testng.ITestResult)[pri:0, instance:testscript.ManageCategoryTest@3e0e1046]" started-at="2025-06-26T18:57:19 IST" name="browserQuit" finished-at="2025-06-26T18:57:20 IST" duration-ms="745" status="PASS">
+        </test-method> <!-- verifyTheUserIsAbleToCreateTheAdminUsers -->
+        <test-method is-config="true" signature="driverQuit(org.testng.ITestResult)[pri:0, instance:testscript.AdminUsersTest@6ed3ccb2]" started-at="2025-06-26T20:06:57 IST" name="driverQuit" finished-at="2025-06-26T20:06:57 IST" duration-ms="386" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=verifyTheUserIsAbleToAddCategoryInformations status=FAILURE method=ManageCategoryTest.verifyTheUserIsAbleToAddCategoryInformations()[pri:0, instance:testscript.ManageCategoryTest@3e0e1046] output={null}]]]>
+                <![CDATA[[TestResult name=verifyTheUserIsAbleToCreateTheAdminUsers status=SKIP method=AdminUsersTest.verifyTheUserIsAbleToCreateTheAdminUsers()[pri:0, instance:testscript.AdminUsersTest@6ed3ccb2] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- browserQuit -->
-      </class> <!-- testscript.ManageCategoryTest -->
+        </test-method> <!-- driverQuit -->
+        <test-method is-config="true" signature="browserInitialisation(java.lang.String)[pri:0, instance:testscript.AdminUsersTest@6ed3ccb2]" started-at="2025-06-26T20:06:57 IST" name="browserInitialisation" finished-at="2025-06-26T20:07:01 IST" duration-ms="3077" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserInitialisation -->
+        <test-method signature="verifyTheUserIsAbleToCreateTheAdminUsers()[pri:0, instance:testscript.AdminUsersTest@6ed3ccb2]" started-at="2025-06-26T20:07:01 IST" name="verifyTheUserIsAbleToCreateTheAdminUsers" finished-at="2025-06-26T20:07:05 IST" duration-ms="4192" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyTheUserIsAbleToCreateTheAdminUsers -->
+        <test-method is-config="true" signature="driverQuit(org.testng.ITestResult)[pri:0, instance:testscript.AdminUsersTest@6ed3ccb2]" started-at="2025-06-26T20:07:05 IST" name="driverQuit" finished-at="2025-06-26T20:07:05 IST" duration-ms="429" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyTheUserIsAbleToCreateTheAdminUsers status=SUCCESS method=AdminUsersTest.verifyTheUserIsAbleToCreateTheAdminUsers()[pri:0, instance:testscript.AdminUsersTest@6ed3ccb2] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- driverQuit -->
+      </class> <!-- testscript.AdminUsersTest -->
     </test> <!-- Test -->
-  </suite> <!-- Suite -->
+  </suite> <!-- TestNG -->
 </testng-results>
