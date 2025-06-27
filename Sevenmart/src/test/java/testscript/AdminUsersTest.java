@@ -17,9 +17,9 @@ public class AdminUsersTest extends Base {
 		String password = ExcelUtility.getStringData(1, 1, "loginpage");
 
 		LoginPage loginpage = new LoginPage(driver);
-		loginpage.enterTheUserName(username);
+		loginpage.enterTheUsername(username);
 		loginpage.enterThePassword(password);
-		loginpage.clickTheSignInButton();
+		loginpage.clickSigninButton();
 
 		AdminUsersPage adminPage = new AdminUsersPage(driver);
 		FakerUtility faker = new FakerUtility();
@@ -44,9 +44,9 @@ public class AdminUsersTest extends Base {
 		String password = ExcelUtility.getStringData(1, 1, "loginpage");
 
 		LoginPage loginpage = new LoginPage(driver);
-		loginpage.enterTheUserName(username);
+		loginpage.enterTheUsername(username);
 		loginpage.enterThePassword(password);
-		loginpage.clickTheSignInButton();
+		loginpage.clickSigninButton();
 
 		AdminUsersPage adminPage = new AdminUsersPage(driver);
 		adminPage.clickAdminMoreInfo();

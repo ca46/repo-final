@@ -10,7 +10,7 @@
   <test thread-count="5" name="Test">
     <parameter name="browser" value="chrome" /> 
     <classes>
-      <class name="testscript.ManageNewsTest" />
+      <class name="testscript.LogoutTest" />
     </classes>
   </test>
 

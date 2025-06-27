@@ -26,8 +26,8 @@ WebDriver driver;
 public Properties properties;
 public FileInputStream fileinputstream;
 	
-    @Parameters("browser")                      //Injects parameters from XML configuration
-	@BeforeMethod(alwaysRun=true)                                         //Runs before every @Test method
+    @Parameters("browser")                      
+	@BeforeMethod(alwaysRun=true)                                         
    public void browserInitialisation(String browser) throws Exception
     {
       try {
@@ -55,6 +55,7 @@ public FileInputStream fileinputstream;
     		throw new Exception("INVALID");
     	}
     	
+    	
     	//driver.get("https://groceryapp.uniqassosiates.com/admin");
     	
     	driver.get(properties.getProperty("url"));
@@ -65,7 +66,7 @@ public FileInputStream fileinputstream;
     }
 	
    
-    @AfterMethod(alwaysRun=true)                                          //Runs after every @Test method
+    @AfterMethod(alwaysRun=true)                                       
 	public void driverQuit(ITestResult iTestResult) throws IOException
     {
     	if (iTestResult.getStatus() == ITestResult.FAILURE) { 

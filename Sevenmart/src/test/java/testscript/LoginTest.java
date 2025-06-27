@@ -1,102 +1,66 @@
 package testscript;
 
 import java.io.IOException;
-
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 import pages.LoginPage;
 import utilities.ExcelUtility;
 
 public class LoginTest extends Base {
 
-    @Test
-    public void verifyTheUserIsAbleToLoginUsingValidCredential () throws IOException
-	{
-		//String username="admin";
-		//String password="admin";
-		String username=ExcelUtility.getStringData(1, 0, "loginpage");
-		String password=ExcelUtility.getStringData(1, 1, "loginpage");
-		LoginPage loginpage=new LoginPage(driver);
-		loginpage.enterTheUserName(username);
+	@Test(retryAnalyzer = retry.Retry.class, groups = {"Regression"})
+	public void verifyTheUserIsAbleToLoginUsingValidCredential() throws IOException {
+		String username = ExcelUtility.getStringData(1, 0, "loginpage");
+		String password = ExcelUtility.getStringData(1, 1, "loginpage");
+
+		LoginPage loginpage = new LoginPage(driver);
+		loginpage.enterTheUsername(username);
 		loginpage.enterThePassword(password);
-		loginpage.clickTheSignInButton();
-		boolean dashboardloaded=loginpage.isDashBoardDisplayed();
-		Assert.assertTrue(dashboardloaded);
-	}
-    @Test
-    public void invalidUsernameAndCorrectPassword() throws IOException
-	{
-		
-		//String username="password";
-		//String password="admin";
-		String username=ExcelUtility.getStringData(2, 0, "loginpage");
-		String password=ExcelUtility.getStringData(2, 1, "loginpage");
-		LoginPage loginpage=new LoginPage(driver);
-		loginpage.enterTheUserName(username);
-		loginpage.enterThePassword(password);
-		loginpage.clickTheSignInButton();
-		boolean alert=loginpage.isAlertMessageDisplayed();
-		Assert.assertTrue(alert);
+		loginpage.clickSigninButton();
+
+		boolean dashboardLoaded = loginpage.isDashboardDisplayed();
+		Assert.assertTrue(dashboardLoaded, "Dashboard not displayed with valid credentials.");
 	}
 
-    @Test
-    public void correctUsernameAndIncorrectPassword() throws IOException {
-        String username = ExcelUtility.getStringData(3, 0, "loginpage");
-        String password = ExcelUtility.getStringData(3, 1, "loginpage");
-        LoginPage loginpage = new LoginPage(driver);
-        loginpage.enterTheUserName(username);
-        loginpage.enterThePassword(password);
-        loginpage.clickTheSignInButton();
-        boolean alert = loginpage.isAlertMessageDisplayed();
-        Assert.assertTrue(alert);
-    }
+	@Test(retryAnalyzer = retry.Retry.class)
+	public void invalidUsernameAndCorrectPassword() throws IOException {
+		String username = ExcelUtility.getStringData(2, 0, "loginpage");
+		String password = ExcelUtility.getStringData(2, 1, "loginpage");
 
-    @Test
-    public void incorrectUsernameAndIncorrectPassword() throws IOException {
-        String username = ExcelUtility.getStringData(4, 0, "loginpage");
-        String password = ExcelUtility.getStringData(4, 1, "loginpage");
-        LoginPage loginpage = new LoginPage(driver);
-        loginpage.enterTheUserName(username);
-        loginpage.enterThePassword(password);
-        loginpage.clickTheSignInButton();
-        boolean alert = loginpage.isAlertMessageDisplayed();
-        Assert.assertTrue(alert);
-    }
+		LoginPage loginpage = new LoginPage(driver);
+		loginpage.enterTheUsername(username);
+		loginpage.enterThePassword(password);
+		loginpage.clickSigninButton();
 
-   @Test
-    public void emptyUsernameAndPassword() throws IOException {
-        String username = ExcelUtility.getStringData(5, 0, "loginpage");
-        String password = ExcelUtility.getStringData(5, 1, "loginpage");
-        LoginPage loginpage = new LoginPage(driver);
-        loginpage.enterTheUserName(username);
-        loginpage.enterThePassword(password);
-        loginpage.clickTheSignInButton();
-        boolean alert = loginpage.isAlertMessageDisplayed();
-        Assert.assertTrue(alert);
-    }
+		boolean alert = loginpage.isAlertMessageDisplayed();
+		Assert.assertTrue(alert, "Alert message not displayed for invalid username.");
+	}
 
-    //@Test
-    public void emptyUsernameValidPassword() throws IOException {
-        String username = ExcelUtility.getStringData(6, 0, "loginpage");
-        String password = ExcelUtility.getStringData(6, 1, "loginpage");
-        LoginPage loginpage = new LoginPage(driver);
-        loginpage.enterTheUserName(username);
-        loginpage.enterThePassword(password);
-        loginpage.clickTheSignInButton();
-        boolean alert = loginpage.isAlertMessageDisplayed();
-        Assert.assertTrue(alert);
-    }
+	@Test(retryAnalyzer = retry.Retry.class)
+	public void correctUsernameAndIncorrectPassword() throws IOException {
+		String username = ExcelUtility.getStringData(3, 0, "loginpage");
+		String password = ExcelUtility.getStringData(3, 1, "loginpage");
 
-    //@Test
-    public void validUsernameEmptyPassword() throws IOException {
-        String username = ExcelUtility.getStringData(7, 0, "loginpage");
-        String password = ExcelUtility.getStringData(7, 1, "loginpage");
-        LoginPage loginpage = new LoginPage(driver);
-        loginpage.enterTheUserName(username);
-        loginpage.enterThePassword(password);
-        loginpage.clickTheSignInButton();
-        boolean alert = loginpage.isAlertMessageDisplayed();
-        Assert.assertTrue(alert);
-    }
+		LoginPage loginpage = new LoginPage(driver);
+		loginpage.enterTheUsername(username);
+		loginpage.enterThePassword(password);
+		loginpage.clickSigninButton();
+
+		boolean alert = loginpage.isAlertMessageDisplayed();
+		Assert.assertTrue(alert, "Alert message not displayed for incorrect password.");
+	}
+
+	@Test(retryAnalyzer = retry.Retry.class)
+	public void incorrectUsernameAndIncorrectPassword() throws IOException {
+		String username = ExcelUtility.getStringData(4, 0, "loginpage");
+		String password = ExcelUtility.getStringData(4, 1, "loginpage");
+
+		LoginPage loginpage = new LoginPage(driver);
+		loginpage.enterTheUsername(username);
+		loginpage.enterThePassword(password);
+		loginpage.clickSigninButton();
+
+		boolean alert = loginpage.isAlertMessageDisplayed();
+		Assert.assertTrue(alert, "Alert message not displayed for invalid credentials.");
+	}
 }

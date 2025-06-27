@@ -18,9 +18,9 @@ public class ManageContactTest extends Base {
         String password = ExcelUtility.getStringData(1, 1, "loginpage");
 
         LoginPage loginPage = new LoginPage(driver);
-        loginPage.enterTheUserName(username);
+        loginPage.enterTheUsername(username);
         loginPage.enterThePassword(password);
-        loginPage.clickTheSignInButton();
+        loginPage.clickSigninButton();
 
         String phone = ExcelUtility.getIntegerData(1, 0, "contactpage");
         String email = ExcelUtility.getStringData(1, 1, "contactpage");
@@ -44,9 +44,9 @@ public class ManageContactTest extends Base {
         String password = ExcelUtility.getStringData(1, 1, "loginpage");
 
         LoginPage loginPage = new LoginPage(driver);
-        loginPage.enterTheUserName(username);
+        loginPage.enterTheUsername(username);
         loginPage.enterThePassword(password);
-        loginPage.clickTheSignInButton();
+        loginPage.clickSigninButton();
 
         ManageContactPage contactPage = new ManageContactPage(driver);
         contactPage.clickContactMoreInfo();

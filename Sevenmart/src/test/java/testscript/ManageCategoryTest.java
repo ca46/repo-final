@@ -9,6 +9,7 @@ import org.testng.annotations.Test;
 import pages.LoginPage;
 import pages.ManageCategoryPage;
 import utilities.ExcelUtility;
+import utilities.FakerUtility;
 
 @Test
 public class ManageCategoryTest extends Base{
@@ -21,15 +22,19 @@ public class ManageCategoryTest extends Base{
  		String password=ExcelUtility.getStringData(1, 1, "loginpage");
 
  		LoginPage loginpage=new LoginPage(driver);
- 		loginpage.enterTheUserName(username);
+ 		loginpage.enterTheUsername(username);
  		loginpage.enterThePassword(password);
- 		loginpage.clickTheSignInButton();
+ 		loginpage.clickSigninButton();
  		
- 		String catgry=ExcelUtility.getStringData(1, 0,"managecategorypage");
  		
  		ManageCategoryPage managecategory=new ManageCategoryPage(driver);
+ 		
  		managecategory.moreInfoManageCategory();
  		managecategory.newButton();
+ 		
+ 		FakerUtility fakerutility=new FakerUtility();
+ 		String catgry=fakerutility.creatARandomFirstName();
+ 		
  		managecategory.categoryInformation(catgry);
  		managecategory.selectGroup();
  		managecategory.fileUpload();

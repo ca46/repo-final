@@ -10,43 +10,42 @@ import utilities.ExcelUtility;
 public class ManageNewsTest extends Base {
 
 	@Test(retryAnalyzer = retry.Retry.class)
-	public void verifyUserCanCreateNews() throws IOException {
-
+	public void verifyTheUserIsAbleToEnterTheNews() throws IOException {
 		String username = ExcelUtility.getStringData(1, 0, "loginpage");
 		String password = ExcelUtility.getStringData(1, 1, "loginpage");
+		String news = ExcelUtility.getStringData(1, 0, "managenews");
 
-		LoginPage loginPage = new LoginPage(driver);
-		loginPage.enterTheUserName(username);
-		loginPage.enterThePassword(password);
-		loginPage.clickTheSignInButton();
+		LoginPage loginpage = new LoginPage(driver);
+		loginpage.enterTheUsername(username);
+		loginpage.enterThePassword(password);
+		loginpage.clickSigninButton();
 
-		String newsContent = ExcelUtility.getStringData(1, 0, "managenews");
+		ManageNewsPage managenewspage = new ManageNewsPage(driver);
+		managenewspage.clickMoreInformation();
+		managenewspage.clickNewButton();
+		managenewspage.enterNewsInformation(news);
+		managenewspage.saveNews();
 
-		ManageNewsPage newsPage = new ManageNewsPage(driver);
-		newsPage.clickNewsMoreInfo();
-		newsPage.clickAddNewsButton();
-		newsPage.typeNewsContent(newsContent);
-		newsPage.clickCreateNews();
-
-		Assert.assertTrue(newsPage.isSuccessAlertDisplayed());
+		boolean alertmessage = managenewspage.displayAlertMessage();
+		Assert.assertTrue(alertmessage);
 	}
 
 	@Test(retryAnalyzer = retry.Retry.class)
-	public void verifyUserCanUpdateNews() throws IOException {
-
+	public void verifyTheUserIsAbleToUpdateTheNews() throws IOException {
 		String username = ExcelUtility.getStringData(1, 0, "loginpage");
 		String password = ExcelUtility.getStringData(1, 1, "loginpage");
 
-		LoginPage loginPage = new LoginPage(driver);
-		loginPage.enterTheUserName(username);
-		loginPage.enterThePassword(password);
-		loginPage.clickTheSignInButton();
+		LoginPage loginpage = new LoginPage(driver);
+		loginpage.enterTheUsername(username);
+		loginpage.enterThePassword(password);
+		loginpage.clickSigninButton();
 
-		ManageNewsPage newsPage = new ManageNewsPage(driver);
-		newsPage.clickNewsMoreInfo();
-		newsPage.clickEditNewsIcon();
-		newsPage.clickUpdateNewsButton();
+		ManageNewsPage managenewspage = new ManageNewsPage(driver);
+		managenewspage.clickMoreInformation();
+		managenewspage.editNews();
+		managenewspage.updateNews();
 
-		Assert.assertTrue(newsPage.isSuccessAlertDisplayed());
+		boolean alertmsg = managenewspage.displayAlert();
+		Assert.assertTrue(alertmsg);
 	}
 }

@@ -15,7 +15,7 @@
       </run>
     </groups>
     <classes>
-      <class name="testscript.ManageNewsTest" />
+      <class name="testscript.LogoutTest" />
     </classes>
   </test>
 

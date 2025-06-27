@@ -9,6 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Wait;
 
 import constants.Constants;
+
 import utilities.FileuploadUtility;
 import utilities.PageUtility;
 import utilities.WaitUtility;
@@ -24,7 +25,7 @@ public class ManageCategoryPage
 	@FindBy(xpath="//li[@id='134-selectable']")WebElement selectgrp;
 	@FindBy(xpath="//input[@id='main_img']")WebElement uploadbtn;
 	@FindBy(xpath="//button[text()='Save']")WebElement savebtn;
-	@FindBy(xpath="//div[@class='alert alert-success alert-dismissible']")WebElement alertmsg;
+	@FindBy(xpath="//div[contains(@class, 'alert') and contains(@class, 'success')]")WebElement alertmsg;
 	
     public WebDriver driver;
 	
@@ -60,11 +61,11 @@ public class ManageCategoryPage
 	
 	public void fileUpload()
 	{
-		
+		WaitUtility waitutility=new WaitUtility();
+		waitutility.waitForElementToBeClickable(driver, uploadbtn);	
 			FileuploadUtility fileuploadutility=new FileuploadUtility();
 			fileuploadutility.fileUploadUsingSendKeys(uploadbtn,Constants.IMAGE);
 	}
-		
 	
 	public void saveCategoryInformations()
 	{
@@ -78,9 +79,3 @@ public class ManageCategoryPage
 		return alertmsg.isDisplayed();
 	}
 }
-	
-	
-	
-	
-	
-
