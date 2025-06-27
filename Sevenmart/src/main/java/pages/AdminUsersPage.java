@@ -1,89 +1,72 @@
 package pages;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.Select;
-
 import utilities.PageUtility;
 
-
 public class AdminUsersPage {
- 
+
 	public WebDriver driver;
-	
-	@FindBy(xpath="//input[@placeholder='Username']")WebElement uname;
-	@FindBy(xpath="//input[@placeholder='Password']")WebElement pword;
-	@FindBy(xpath="//button[@type='submit']")WebElement signin;
-	@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/list-admin']//parent::div/a")WebElement moreinfoadmin;
-	@FindBy(xpath="//a[text()=' New']")WebElement newbtn;
-	@FindBy(xpath="//input[@id='username']")WebElement usernme;
-	@FindBy(xpath="//input[@id='password']")WebElement passwrd;
-	@FindBy(xpath="//select[@id='user_type']")WebElement usrtype;
-	@FindBy(xpath="//button[@name='Create']")WebElement savebtn;
-	@FindBy(xpath="//div[@class='alert alert-success alert-dismissible']")WebElement alertmsg;
-	
-	public AdminUsersPage(WebDriver driver)
-	{
-		this.driver=driver;
+
+	@FindBy(xpath = "//input[@placeholder='Username']")WebElement usernameField;
+	@FindBy(xpath = "//input[@placeholder='Password']")WebElement passwordField;
+	@FindBy(xpath = "//button[@type='submit']")WebElement signInButton;
+	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/list-admin']//parent::div/a")WebElement adminMoreInfoLink;
+	@FindBy(xpath = "//a[text()=' New']")WebElement newAdminButton;
+	@FindBy(xpath = "//input[@id='username']")WebElement inputUsername;
+	@FindBy(xpath = "//input[@id='password']")WebElement inputPassword;
+	@FindBy(xpath = "//select[@id='user_type']")WebElement userTypeDropdown;
+	@FindBy(xpath = "//button[@name='Create']")WebElement createButton;
+	@FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']")WebElement successAlert;
+	@FindBy(xpath = "//a[contains(@href, '/admin/user/edit?edit=') and contains(@class, 'btn-primary')]")WebElement editAdminButton;
+    @FindBy(xpath = "//button[@name='Update']")WebElement updateButton;
+	@FindBy(xpath = "//h5[text()=' Alert!']")WebElement updateAlert;
+
+	public AdminUsersPage(WebDriver driver) {
+		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
-    
-    public void clickMoreInformationAdmin()
-   {
-    	moreinfoadmin.click();
-   }
-    
-    public void clickNewButton()
-    {
-  	 newbtn.click();
-    }
-    
-    public void enterUserName(String user)
-	{
-    	usernme.sendKeys(user);
+
+	public void clickAdminMoreInfo() {
+		adminMoreInfoLink.click();
 	}
-	
-    public void enterPassword(String pass)
-	{
-    	passwrd.sendKeys(pass);
+
+	public void clickAddNewAdmin() {
+		newAdminButton.click();
 	}
-    
-    public void selectUserType()
-	{ 
-    	PageUtility pageutility=new PageUtility();
-    	pageutility.selectByIndex(usrtype, 2);          //  sc.selectByIndex(2);
-    }
-    
-    public void saveAdminUsers()
-    {
-    	savebtn.click();
-    }
-    
-    public boolean displayAlertMessage()
-    {
-  	 return alertmsg.isDisplayed();
-    }
-    
-    @FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/user/edit?edit=14548&page_ad=1']")WebElement edit;
-    @FindBy(xpath="//button[@name='Update']")WebElement update;
-    @FindBy(xpath="//h5[text()=' Alert!']")WebElement alert;
-    
-    public void editAdminUsers()
-    {
-    	edit.click();
-    }
-    
-    public void updateAdminUsers()
-    {
-    	update.click();
-    }
-    
-    public boolean displayAlert()
-    {
-  	 return alert.isDisplayed();
-    }
+
+	public void typeAdminUsername(String user) {
+		inputUsername.sendKeys(user);
+	}
+
+	public void typeAdminPassword(String pass) {
+		inputPassword.sendKeys(pass);
+	}
+
+	public void chooseUserType() {
+		PageUtility pageutility = new PageUtility();
+		pageutility.selectByIndex(userTypeDropdown, 2);
+	}
+
+	public void clickCreateAdmin() {
+		createButton.click();
+	}
+
+	public boolean isSuccessAlertDisplayed() {
+		return successAlert.isDisplayed();
+	}
+
+	public void clickEditAdmin() {
+		editAdminButton.click();
+	}
+
+	public void clickUpdateAdmin() {
+		updateButton.click();
+	}
+
+	public boolean isUpdateAlertDisplayed() {
+		return updateAlert.isDisplayed();
+	}
 }

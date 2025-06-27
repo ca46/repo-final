@@ -39,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-TestNG" class="navigator-link">
-              <span class="suite-name border-skipped">TestNG</span>
+              <span class="suite-name border-passed">TestNG</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -92,21 +92,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">6 methods,  1 skipped,  5 passed</span>
-                  </li>
-                  <li>
-                    <span class="method-list-title skipped">Retried methods</span>
-                    <span class="show-or-hide-methods skipped">
-                      <a href="#" panel-name="suite-TestNG" class="hide-methods skipped suite-TestNG"> (hide)</a> <!-- hide-methods skipped suite-TestNG -->
-                      <a href="#" panel-name="suite-TestNG" class="show-methods skipped suite-TestNG"> (show)</a> <!-- show-methods skipped suite-TestNG -->
-                    </span>
-                    <div class="method-list-content skipped suite-TestNG">
-                      <span>
-                        <img src="skipped.png" width="3%"/>
-                        <a href="#" panel-name="suite-TestNG" title="testscript.AdminUsersTest" class="method navigator-link" hash-for-method="verifyTheUserIsAbleToCreateTheAdminUsers">verifyTheUserIsAbleToCreateTheAdminUsers</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content skipped suite-TestNG -->
+                    <span class="method-stats">3 methods,   3 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -117,17 +103,7 @@
                     <div class="method-list-content passed suite-TestNG">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-TestNG" title="testscript.AdminUsersTest" class="method navigator-link" hash-for-method="verifyTheUserIsAbleToCreateTheAdminUsers">verifyTheUserIsAbleToCreateTheAdminUsers</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-TestNG" title="testscript.ManageContactTest" class="method navigator-link" hash-for-method="verifyTheUserIsAbleToDisplayContactUsInformations">verifyTheUserIsAbleToDisplayContactUsInformations</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-TestNG" title="testscript.ManageNewsTest" class="method navigator-link" hash-for-method="verifyTheUserIsAbleToEnterTheNews">verifyTheUserIsAbleToEnterTheNews</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -152,64 +128,6 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-TestNG" class="panel TestNG">
-          <div class="suite-TestNG-class-skipped">
-            <div class="main-panel-header rounded-window-top">
-              <img src="skipped.png"/>
-              <span class="class-name">testscript.AdminUsersTest</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="verifyTheUserIsAbleToCreateTheAdminUsers">
-                  </a> <!-- verifyTheUserIsAbleToCreateTheAdminUsers -->
-                  <span class="method-name">verifyTheUserIsAbleToCreateTheAdminUsers</span>
-                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[@class=&apos;alert alert-success alert-dismissible&apos;]&quot;}
-  (Session info: chrome=137.0.7151.120)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: &apos;4.29.0&apos;, revision: &apos;5fc1ec94cb&apos;
-System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.12&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [0b306709d6e014f3b58f8c35b3e32cfc, findElement {using=xpath, value=//div[@class=&apos;alert alert-success alert-dismissible&apos;]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.120, chrome: {chromedriverVersion: 137.0.7151.119 (e0ac9d12dff..., userDataDir: C:\Users\91813\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61498}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61498/devtoo..., se:cdpVersion: 137.0.7151.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 0b306709d6e014f3b58f8c35b3e32cfc
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy13.isDisplayed(Unknown Source)
-	at pages.AdminUsersPage.displayAlertMessage(AdminUsersPage.java:68)
-	at testscript.AdminUsersTest.verifyTheUserIsAbleToCreateTheAdminUsers(AdminUsersTest.java:42)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 32 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-TestNG-class-skipped -->
-          <div class="suite-TestNG-class-passed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">testscript.ManageNewsTest</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="verifyTheUserIsAbleToEnterTheNews">
-                  </a> <!-- verifyTheUserIsAbleToEnterTheNews -->
-                  <span class="method-name">verifyTheUserIsAbleToEnterTheNews</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-TestNG-class-passed -->
           <div class="suite-TestNG-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -247,21 +165,6 @@ Session ID: 0b306709d6e014f3b58f8c35b3e32cfc
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-TestNG-class-passed -->
-          <div class="suite-TestNG-class-passed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">testscript.AdminUsersTest</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="verifyTheUserIsAbleToCreateTheAdminUsers">
-                  </a> <!-- verifyTheUserIsAbleToCreateTheAdminUsers -->
-                  <span class="method-name">verifyTheUserIsAbleToCreateTheAdminUsers</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-TestNG-class-passed -->
         </div> <!-- panel TestNG -->
         <div panel-name="test-xml-TestNG" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -280,17 +183,7 @@ Session ID: 0b306709d6e014f3b58f8c35b3e32cfc
           &lt;include name=&quot;verifyTheUserIsAbleToLoginUsingValidCredentials&quot;/&gt;
         &lt;/methods&gt;
       &lt;/class&gt; &lt;!-- testscript.LoginTest --&gt;
-      &lt;class name=&quot;testscript.AdminUsersTest&quot;&gt;
-        &lt;methods&gt;
-          &lt;include name=&quot;verifyTheUserIsAbleToCreateTheAdminUsers&quot;/&gt;
-        &lt;/methods&gt;
-      &lt;/class&gt; &lt;!-- testscript.AdminUsersTest --&gt;
       &lt;class name=&quot;testscript.ManageContactTest&quot;/&gt;
-      &lt;class name=&quot;testscript.ManageNewsTest&quot;&gt;
-        &lt;methods&gt;
-          &lt;include name=&quot;verifyTheUserIsAbleToEnterTheNews&quot;/&gt;
-        &lt;/methods&gt;
-      &lt;/class&gt; &lt;!-- testscript.ManageNewsTest --&gt;
       &lt;class name=&quot;testscript.Base&quot;/&gt;
       &lt;class name=&quot;testscript.ManageFooterTest&quot;/&gt;
     &lt;/classes&gt;
@@ -306,7 +199,7 @@ Session ID: 0b306709d6e014f3b58f8c35b3e32cfc
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Test (6 classes)</span>
+                <span class="test-name">Test (4 classes)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -332,36 +225,24 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(6);
+data.addRows(3);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'verifyTheUserIsAbleToCreateTheAdminUsers')
-data.setCell(0, 2, 'testscript.AdminUsersTest')
-data.setCell(0, 3, 6545);
+data.setCell(0, 1, 'verifyTheUserIsAbleToDisplayContactUsInformations')
+data.setCell(0, 2, 'testscript.ManageContactTest')
+data.setCell(0, 3, 6014);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'verifyTheUserIsAbleToDisplayContactUsInformations')
-data.setCell(1, 2, 'testscript.ManageContactTest')
-data.setCell(1, 3, 4788);
+data.setCell(1, 1, 'verifyTheUserIsAbleToUpdateManageFooterTextInformation')
+data.setCell(1, 2, 'testscript.ManageFooterTest')
+data.setCell(1, 3, 4866);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'verifyTheUserIsAbleToUpdateContactUsInformations')
 data.setCell(2, 2, 'testscript.ManageContactTest')
-data.setCell(2, 3, 4676);
-data.setCell(3, 0, 3)
-data.setCell(3, 1, 'verifyTheUserIsAbleToCreateTheAdminUsers')
-data.setCell(3, 2, 'testscript.AdminUsersTest')
-data.setCell(3, 3, 4192);
-data.setCell(4, 0, 4)
-data.setCell(4, 1, 'verifyTheUserIsAbleToUpdateManageFooterTextInformation')
-data.setCell(4, 2, 'testscript.ManageFooterTest')
-data.setCell(4, 3, 4055);
-data.setCell(5, 0, 5)
-data.setCell(5, 1, 'verifyTheUserIsAbleToEnterTheNews')
-data.setCell(5, 2, 'testscript.ManageNewsTest')
-data.setCell(5, 3, 3133);
+data.setCell(2, 3, 4153);
 window.suiteTableData['TestNG']= { tableData: data, tableDiv: 'times-div-TestNG'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 27 seconds</span>
+              <span class="suite-total-time">Total running time: 15 seconds</span>
               <div id="times-div-TestNG">
               </div> <!-- times-div-TestNG -->
             </div> <!-- times-div -->
@@ -376,35 +257,21 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-TestNG" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">7 ignored methods</span>
+            <span class="header-content">5 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
-            <div class="ignored-class-div">
-              <span class="ignored-class-name">testscript.ManageNewsTest</span>
-              <div class="ignored-methods-div">
-                <span class="ignored-method-name">verifyTheUserIsAbleToUpdateTheNews</span>
-                <br/>
-              </div> <!-- ignored-methods-div -->
-            </div> <!-- ignored-class-div -->
             <div class="ignored-class-div">
               <span class="ignored-class-name">testscript.LoginTest</span>
               <div class="ignored-methods-div">
                 <span class="ignored-method-name">emptyUsernameAndPassword</span>
                 <br/>
-                <span class="ignored-method-name">correctUsernameAndIncorrectPassword</span>
-                <br/>
-                <span class="ignored-method-name">invalidUsernameAndCorrectPassword</span>
-                <br/>
                 <span class="ignored-method-name">verifyTheUserIsAbleToLoginUsingValidCredential</span>
                 <br/>
                 <span class="ignored-method-name">incorrectUsernameAndIncorrectPassword</span>
                 <br/>
-              </div> <!-- ignored-methods-div -->
-            </div> <!-- ignored-class-div -->
-            <div class="ignored-class-div">
-              <span class="ignored-class-name">testscript.AdminUsersTest</span>
-              <div class="ignored-methods-div">
-                <span class="ignored-method-name">verifyTheUserIsAbleToUpdateTheAdminUsers</span>
+                <span class="ignored-method-name">correctUsernameAndIncorrectPassword</span>
+                <br/>
+                <span class="ignored-method-name">invalidUsernameAndCorrectPassword</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
@@ -416,87 +283,45 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">testscript.AdminUsersTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">testscript.ManageContactTest</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">browserInitialisation(chrome)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">verifyTheUserIsAbleToCreateTheAdminUsers</span>
-                <span class="method-start">6818 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">driverQuit([TestResult name=verifyTheUserIsAbleToCreateTheAdminUsers status=SKIP method=AdminUsersTest.verifyTh...)</span>
-                <span class="method-start">13392 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">browserInitialisation(chrome)</span>
-                <span class="method-start">13779 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">verifyTheUserIsAbleToCreateTheAdminUsers</span>
-                <span class="method-start">16856 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">driverQuit([TestResult name=verifyTheUserIsAbleToCreateTheAdminUsers status=SUCCESS method=AdminUsersTest.verif...)</span>
-                <span class="method-start">21057 ms</span>
-              </div> <!-- configuration-method after -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">testscript.ManageContactTest</div> <!-- chronological-class-name -->
-              <div class="configuration-method before">
-                <span class="method-name">browserInitialisation(chrome)</span>
-                <span class="method-start">21498 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
                 <span class="method-name">verifyTheUserIsAbleToDisplayContactUsInformations</span>
-                <span class="method-start">26303 ms</span>
+                <span class="method-start">6024 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">driverQuit([TestResult name=verifyTheUserIsAbleToDisplayContactUsInformations status=SUCCESS method=ManageConta...)</span>
-                <span class="method-start">31095 ms</span>
+                <span class="method-start">12043 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">browserInitialisation(chrome)</span>
-                <span class="method-start">31731 ms</span>
+                <span class="method-start">14963 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">verifyTheUserIsAbleToUpdateContactUsInformations</span>
-                <span class="method-start">35086 ms</span>
+                <span class="method-start">21096 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">driverQuit([TestResult name=verifyTheUserIsAbleToUpdateContactUsInformations status=SUCCESS method=ManageContac...)</span>
-                <span class="method-start">39765 ms</span>
-              </div> <!-- configuration-method after -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">testscript.ManageNewsTest</div> <!-- chronological-class-name -->
-              <div class="configuration-method before">
-                <span class="method-name">browserInitialisation(chrome)</span>
-                <span class="method-start">40183 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">verifyTheUserIsAbleToEnterTheNews</span>
-                <span class="method-start">43360 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">driverQuit([TestResult name=verifyTheUserIsAbleToEnterTheNews status=SUCCESS method=ManageNewsTest.verifyTheUse...)</span>
-                <span class="method-start">46496 ms</span>
+                <span class="method-start">25251 ms</span>
               </div> <!-- configuration-method after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">testscript.ManageFooterTest</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">browserInitialisation(chrome)</span>
-                <span class="method-start">46981 ms</span>
+                <span class="method-start">25820 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">verifyTheUserIsAbleToUpdateManageFooterTextInformation</span>
-                <span class="method-start">51576 ms</span>
+                <span class="method-start">29385 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">driverQuit([TestResult name=verifyTheUserIsAbleToUpdateManageFooterTextInformation status=SUCCESS method=Manage...)</span>
-                <span class="method-start">55633 ms</span>
+                <span class="method-start">34257 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

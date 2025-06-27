@@ -37,7 +37,7 @@ public class ManageCategoryPage
 	public void moreInfoManageCategory()
 	{
 		PageUtility pageutility=new PageUtility();
-		pageutility.javaSriptClick(driver, moreinfo);		//moreinfo.click();
+		pageutility.javaSriptClick(driver, moreinfo);		
 		
 	}
 	
@@ -70,7 +70,7 @@ public class ManageCategoryPage
 	{
 
 		PageUtility pageutility=new PageUtility();
-		pageutility.javaSriptClick(driver, savebtn);         //savebtn.click();
+		pageutility.javaSriptClick(driver, savebtn);         
 	}
 	
 	public boolean isAlertMessageIsDisplayed()

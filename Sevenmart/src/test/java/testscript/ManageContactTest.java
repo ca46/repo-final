@@ -8,50 +8,52 @@ import org.testng.annotations.Test;
 import pages.LoginPage;
 import pages.ManageContactPage;
 import utilities.ExcelUtility;
+
 @Test
-public class ManageContactTest extends Base
-{    @Test
-     public void verifyTheUserIsAbleToUpdateContactUsInformations() throws IOException
-     {
-    	String username=ExcelUtility.getStringData(1, 0, "loginpage");
- 		String password=ExcelUtility.getStringData(1, 1, "loginpage");
+public class ManageContactTest extends Base {
 
- 		LoginPage loginpage=new LoginPage(driver);
- 		loginpage.enterTheUserName(username);
- 		loginpage.enterThePassword(password);
- 		loginpage.clickTheSignInButton();
- 		
- 		String managephoneno=ExcelUtility.getIntegerData(1, 0, "contactpage");
- 		String manageemail=ExcelUtility.getStringData(1, 1, "contactpage");
- 		String manageaddress=ExcelUtility.getStringData(1, 2, "contactpage");
- 		
- 		ManageContactPage managecontactpage=new ManageContactPage(driver);
- 		managecontactpage.moreInfoManageContact();
- 		managecontactpage.actionManageContact();
- 		managecontactpage.phonenumberManageContact(managephoneno);
- 		managecontactpage.emailManageContact(manageemail);
- 		managecontactpage.addressManageContact(manageaddress);
- 		managecontactpage.updateManageContact();
- 		boolean alertmsg=managecontactpage.isAlertMessageIsDisplayed();
-		Assert.assertTrue(alertmsg);
-       }
-     @Test
-     public void verifyTheUserIsAbleToDisplayContactUsInformations() throws IOException
-     {
-    	String username=ExcelUtility.getStringData(1, 0, "loginpage");
-  		String password=ExcelUtility.getStringData(1, 1, "loginpage");
+    @Test
+    public void verifyUserCanUpdateContactInformation() throws IOException {
+        String username = ExcelUtility.getStringData(1, 0, "loginpage");
+        String password = ExcelUtility.getStringData(1, 1, "loginpage");
 
-  		LoginPage loginpage=new LoginPage(driver);
-  		loginpage.enterTheUserName(username);
-  		loginpage.enterThePassword(password);
-  		loginpage.clickTheSignInButton();
-  		
-  		ManageContactPage managecontactpage=new ManageContactPage(driver);
- 		managecontactpage.moreInfoManageContact();
- 		managecontactpage.actionManageContact();
- 		managecontactpage.updateManageContact();
- 		
-    	boolean alertmsg=managecontactpage.isAlertMessageIsDisplayed();
-		Assert.assertTrue(alertmsg);
-     }
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.enterTheUserName(username);
+        loginPage.enterThePassword(password);
+        loginPage.clickTheSignInButton();
+
+        String phone = ExcelUtility.getIntegerData(1, 0, "contactpage");
+        String email = ExcelUtility.getStringData(1, 1, "contactpage");
+        String address = ExcelUtility.getStringData(1, 2, "contactpage");
+
+        ManageContactPage contactPage = new ManageContactPage(driver);
+        contactPage.clickContactMoreInfo();
+        contactPage.clickEditContactIcon();
+        contactPage.updatePhoneNumber(phone);
+        contactPage.updateEmail(email);
+        contactPage.updateAddress(address);
+        contactPage.clickUpdateButton();
+
+        boolean isAlertVisible = contactPage.isSuccessAlertDisplayed();
+        Assert.assertTrue(isAlertVisible);
+    }
+
+    @Test
+    public void verifyUserCanDisplayContactInformation() throws IOException {
+        String username = ExcelUtility.getStringData(1, 0, "loginpage");
+        String password = ExcelUtility.getStringData(1, 1, "loginpage");
+
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.enterTheUserName(username);
+        loginPage.enterThePassword(password);
+        loginPage.clickTheSignInButton();
+
+        ManageContactPage contactPage = new ManageContactPage(driver);
+        contactPage.clickContactMoreInfo();
+        contactPage.clickEditContactIcon();
+        contactPage.clickUpdateButton();
+
+        boolean isAlertVisible = contactPage.isSuccessAlertDisplayed();
+        Assert.assertTrue(isAlertVisible);
+    }
 }

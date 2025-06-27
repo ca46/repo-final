@@ -1,62 +1,52 @@
 package testscript;
 
 import java.io.IOException;
-
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 import pages.LoginPage;
 import pages.ManageNewsPage;
 import utilities.ExcelUtility;
 
-public class ManageNewsTest extends Base{
-	
-	@Test(retryAnalyzer=retry.Retry.class)
-	
-	public void verifyTheUserIsAbleToEnterTheNews() throws IOException
-	{
-		
-		
-		String username=ExcelUtility.getStringData(1, 0,"loginpage");
-		String password=ExcelUtility.getStringData(1, 1,"loginpage");
-		
-		LoginPage loginpage=new LoginPage(driver);
-		loginpage.enterTheUserName(username);
-		loginpage.enterThePassword(password);
-		loginpage.clickTheSignInButton();
-		
-		String news=ExcelUtility.getStringData(1, 0,"managenews");
-		
-		ManageNewsPage managenewspage=new ManageNewsPage(driver);
-		managenewspage.clickMoreInformation();
-		managenewspage.clickNewButton();
-		managenewspage.enterNewsInformation(news);
-		managenewspage.saveNews();
-		boolean alertmessage=managenewspage.displayAlertMessage();
-		Assert.assertTrue(alertmessage);
-		
+public class ManageNewsTest extends Base {
+
+	@Test(retryAnalyzer = retry.Retry.class)
+	public void verifyUserCanCreateNews() throws IOException {
+
+		String username = ExcelUtility.getStringData(1, 0, "loginpage");
+		String password = ExcelUtility.getStringData(1, 1, "loginpage");
+
+		LoginPage loginPage = new LoginPage(driver);
+		loginPage.enterTheUserName(username);
+		loginPage.enterThePassword(password);
+		loginPage.clickTheSignInButton();
+
+		String newsContent = ExcelUtility.getStringData(1, 0, "managenews");
+
+		ManageNewsPage newsPage = new ManageNewsPage(driver);
+		newsPage.clickNewsMoreInfo();
+		newsPage.clickAddNewsButton();
+		newsPage.typeNewsContent(newsContent);
+		newsPage.clickCreateNews();
+
+		Assert.assertTrue(newsPage.isSuccessAlertDisplayed());
 	}
-	
-	@Test(retryAnalyzer=retry.Retry.class)
-	public void verifyTheUserIsAbleToUpdateTheNews() throws IOException
-	{
-		
-		String username=ExcelUtility.getStringData(1, 0,"loginpage");
-		String password=ExcelUtility.getStringData(1, 1,"loginpage");
-		
-		LoginPage loginpage=new LoginPage(driver);
-		loginpage.enterTheUserName(username);
-		loginpage.enterThePassword(password);
-		loginpage.clickTheSignInButton();
-		
-		ManageNewsPage managenewspage=new ManageNewsPage(driver);
-		managenewspage.clickMoreInformation();
-		managenewspage.editNews();
-		managenewspage.updateNews();
-		managenewspage.displayAlert();
-		
-		boolean alertmsg=managenewspage.displayAlertMessage();
-		Assert.assertTrue(alertmsg);
-		
+
+	@Test(retryAnalyzer = retry.Retry.class)
+	public void verifyUserCanUpdateNews() throws IOException {
+
+		String username = ExcelUtility.getStringData(1, 0, "loginpage");
+		String password = ExcelUtility.getStringData(1, 1, "loginpage");
+
+		LoginPage loginPage = new LoginPage(driver);
+		loginPage.enterTheUserName(username);
+		loginPage.enterThePassword(password);
+		loginPage.clickTheSignInButton();
+
+		ManageNewsPage newsPage = new ManageNewsPage(driver);
+		newsPage.clickNewsMoreInfo();
+		newsPage.clickEditNewsIcon();
+		newsPage.clickUpdateNewsButton();
+
+		Assert.assertTrue(newsPage.isSuccessAlertDisplayed());
 	}
 }
