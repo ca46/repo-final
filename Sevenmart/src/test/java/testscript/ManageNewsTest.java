@@ -16,9 +16,9 @@ public class ManageNewsTest extends Base {
 		String news = ExcelUtility.getStringData(1, 0, "managenews");
 
 		LoginPage loginpage = new LoginPage(driver);
-		loginpage.enterTheUsername(username);
+		loginpage.enterTheUserName(username);
 		loginpage.enterThePassword(password);
-		loginpage.clickSigninButton();
+		loginpage.clickTheSignInButton();
 
 		ManageNewsPage managenewspage = new ManageNewsPage(driver);
 		managenewspage.clickMoreInformation();
@@ -36,9 +36,9 @@ public class ManageNewsTest extends Base {
 		String password = ExcelUtility.getStringData(1, 1, "loginpage");
 
 		LoginPage loginpage = new LoginPage(driver);
-		loginpage.enterTheUsername(username);
+		loginpage.enterTheUserName(username);
 		loginpage.enterThePassword(password);
-		loginpage.clickSigninButton();
+		loginpage.clickTheSignInButton();
 
 		ManageNewsPage managenewspage = new ManageNewsPage(driver);
 		managenewspage.clickMoreInformation();

@@ -14,12 +14,12 @@ public class LoginTest extends Base {
 		String password = ExcelUtility.getStringData(1, 1, "loginpage");
 
 		LoginPage loginpage = new LoginPage(driver);
-		loginpage.enterTheUsername(username);
+		loginpage.enterTheUserName(username);
 		loginpage.enterThePassword(password);
-		loginpage.clickSigninButton();
+		loginpage.clickTheSignInButton();
 
-		boolean dashboardLoaded = loginpage.isDashboardDisplayed();
-		Assert.assertTrue(dashboardLoaded, "Dashboard not displayed with valid credentials.");
+		boolean dashboardLoaded = loginpage.isDashBoardDisplayed();
+		Assert.assertTrue(dashboardLoaded);
 	}
 
 	@Test(retryAnalyzer = retry.Retry.class)
@@ -28,12 +28,12 @@ public class LoginTest extends Base {
 		String password = ExcelUtility.getStringData(2, 1, "loginpage");
 
 		LoginPage loginpage = new LoginPage(driver);
-		loginpage.enterTheUsername(username);
+		loginpage.enterTheUserName(username);
 		loginpage.enterThePassword(password);
-		loginpage.clickSigninButton();
+		loginpage.clickTheSignInButton();
 
 		boolean alert = loginpage.isAlertMessageDisplayed();
-		Assert.assertTrue(alert, "Alert message not displayed for invalid username.");
+		Assert.assertTrue(alert);
 	}
 
 	@Test(retryAnalyzer = retry.Retry.class)
@@ -42,12 +42,12 @@ public class LoginTest extends Base {
 		String password = ExcelUtility.getStringData(3, 1, "loginpage");
 
 		LoginPage loginpage = new LoginPage(driver);
-		loginpage.enterTheUsername(username);
+		loginpage.enterTheUserName(username);
 		loginpage.enterThePassword(password);
-		loginpage.clickSigninButton();
+		loginpage.clickTheSignInButton();
 
 		boolean alert = loginpage.isAlertMessageDisplayed();
-		Assert.assertTrue(alert, "Alert message not displayed for incorrect password.");
+		Assert.assertTrue(alert);
 	}
 
 	@Test(retryAnalyzer = retry.Retry.class)
@@ -56,9 +56,9 @@ public class LoginTest extends Base {
 		String password = ExcelUtility.getStringData(4, 1, "loginpage");
 
 		LoginPage loginpage = new LoginPage(driver);
-		loginpage.enterTheUsername(username);
+		loginpage.enterTheUserName(username);
 		loginpage.enterThePassword(password);
-		loginpage.clickSigninButton();
+		loginpage.clickTheSignInButton();
 
 		boolean alert = loginpage.isAlertMessageDisplayed();
 		Assert.assertTrue(alert, "Alert message not displayed for invalid credentials.");

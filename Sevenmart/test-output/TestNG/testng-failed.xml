@@ -4,21 +4,13 @@
   <test thread-count="5" name="Test(failed)">
     <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="testscript.ManageNewsTest">
+      <class name="testscript.AdminUsersTest">
         <methods>
           <include name="browserInitialisation"/>
-          <include name="driverQuit"/>
-          <include name="verifyTheUserIsAbleToUpdateTheNews"/>
-        </methods>
-      </class> <!-- testscript.ManageNewsTest -->
-      <class name="testscript.LoginTest">
-        <methods>
-          <include name="browserInitialisation"/>
-          <include name="invalidUsernameAndCorrectPassword"/>
-          <include name="incorrectUsernameAndIncorrectPassword"/>
+          <include name="verifyAdminUserCreation"/>
           <include name="driverQuit"/>
         </methods>
-      </class> <!-- testscript.LoginTest -->
+      </class> <!-- testscript.AdminUsersTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [TestNG] -->

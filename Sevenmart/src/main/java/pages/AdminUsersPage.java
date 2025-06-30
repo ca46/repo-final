@@ -19,7 +19,7 @@ public class AdminUsersPage {
 	@FindBy(xpath = "//input[@id='password']")WebElement inputPassword;
 	@FindBy(xpath = "//select[@id='user_type']")WebElement userTypeDropdown;
 	@FindBy(xpath = "//button[@name='Create']")WebElement createButton;
-	@FindBy(xpath = "//div[contains(@class,'alert') and contains(@class,'success')]")WebElement successAlert;
+	@FindBy(xpath="//div[@class='alert alert-success alert-dismissible']")WebElement alertmsg;
 	@FindBy(xpath = "//a[contains(@href, '/admin/user/edit?edit=') and contains(@class, 'btn-primary')]")WebElement editAdminButton;
     @FindBy(xpath = "//button[@name='Update']")WebElement updateButton;
 	@FindBy(xpath = "//h5[text()=' Alert!']")WebElement updateAlert;
@@ -55,7 +55,7 @@ public class AdminUsersPage {
 	}
 
 	public boolean isSuccessAlertDisplayed() {
-		return successAlert.isDisplayed();
+		return alertmsg.isDisplayed();
 	}
 
 	public void clickEditAdmin() {

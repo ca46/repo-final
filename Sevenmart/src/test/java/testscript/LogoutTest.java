@@ -16,9 +16,9 @@ public class LogoutTest extends Base {
 		String password = ExcelUtility.getStringData(1, 1, "loginpage");
 
 		LoginPage loginPage = new LoginPage(driver);
-		loginPage.enterTheUsername(username);
+		loginPage.enterTheUserName(username);
 		loginPage.enterThePassword(password);
-		loginPage.clickSigninButton();
+		loginPage.clickTheSignInButton();
 
 		LogoutPage logoutPage = new LogoutPage(driver);
 		logoutPage.clickProfileImage();

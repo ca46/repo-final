@@ -22,9 +22,9 @@ public class ManageCategoryTest extends Base{
  		String password=ExcelUtility.getStringData(1, 1, "loginpage");
 
  		LoginPage loginpage=new LoginPage(driver);
- 		loginpage.enterTheUsername(username);
+ 		loginpage.enterTheUserName(username);
  		loginpage.enterThePassword(password);
- 		loginpage.clickSigninButton();
+ 		loginpage.clickTheSignInButton();
  		
  		
  		ManageCategoryPage managecategory=new ManageCategoryPage(driver);
