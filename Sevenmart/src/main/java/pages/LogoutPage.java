@@ -7,29 +7,32 @@ import org.openqa.selenium.support.PageFactory;
 
 public class LogoutPage {
 
-	@FindBy(xpath = "//input[@placeholder='Username']")WebElement usernameInput;
-	@FindBy(xpath = "//input[@placeholder='Password']")WebElement passwordInput;
-	@FindBy(xpath = "//button[@type='submit']")WebElement signInButton;
-	@FindBy(xpath = "//img[@src='https://groceryapp.uniqassosiates.com/public/assets/admin/dist/img/avatar5.png']")WebElement profileImage;
-	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/logout']//parent::div")WebElement logoutLink;
-	@FindBy(xpath = "//button[text()='Sign In']")WebElement signInPageButton;
+	@FindBy(xpath="//input[@placeholder='Username']")WebElement uname;
+	@FindBy(xpath="//input[@placeholder='Password']")WebElement pword;
+	@FindBy(xpath="//button[@type='submit']")WebElement signin;
+	@FindBy(xpath="//div/nav/ul[2]/li/a")WebElement image;
+	@FindBy(xpath="//div/nav/ul[2]/li/div/a[2]")WebElement logout;
+	@FindBy(xpath="//button[text()='Sign In']")WebElement signinpage;
 	
 	public WebDriver driver;
-
-	public LogoutPage(WebDriver driver) {
-		this.driver = driver;
+	
+	public LogoutPage(WebDriver driver)
+	{
+		this.driver=driver;
 		PageFactory.initElements(driver, this);
 	}
-
-	public void clickProfileImage() {
-		profileImage.click();
+	
+	public void admin()
+	{
+		image.click();
 	}
-
-	public void clickLogoutLink() {
-		logoutLink.click();
+	public void userLogout()
+	{
+		logout.click();
 	}
-
-	public boolean isSignInPageDisplayed() {
-		return signInPageButton.isDisplayed();
+	
+	public boolean signinPageDisplayed()
+	{
+		return signinpage.isDisplayed();
 	}
 }
