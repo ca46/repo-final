@@ -3,13 +3,15 @@ package testscript;
 import java.io.IOException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import constants.Constants;
 import pages.LoginPage;
 import pages.ManageNewsPage;
 import utilities.ExcelUtility;
 
 public class ManageNewsTest extends Base {
 
-	@Test(retryAnalyzer = retry.Retry.class)
+	@Test(retryAnalyzer = retry.Retry.class,description="VERIFYUSERABLETOENTERTHENEWS")
 	public void verifyTheUserIsAbleToEnterTheNews() throws IOException {
 		String username = ExcelUtility.getStringData(1, 0, "loginpage");
 		String password = ExcelUtility.getStringData(1, 1, "loginpage");
@@ -27,10 +29,10 @@ public class ManageNewsTest extends Base {
 		managenewspage.saveNews();
 
 		boolean alertmessage = managenewspage.displayAlertMessage();
-		Assert.assertTrue(alertmessage);
+		Assert.assertTrue(alertmessage,Constants.VERIFYUSERABLETOENTERTHENEWS);
 	}
 
-	@Test(retryAnalyzer = retry.Retry.class)
+	@Test(retryAnalyzer = retry.Retry.class,description="UPDATETHENEWS")
 	public void verifyTheUserIsAbleToUpdateTheNews() throws IOException {
 		String username = ExcelUtility.getStringData(1, 0, "loginpage");
 		String password = ExcelUtility.getStringData(1, 1, "loginpage");
@@ -46,6 +48,6 @@ public class ManageNewsTest extends Base {
 		managenewspage.updateNews();
 
 		boolean alertmsg = managenewspage.displayAlert();
-		Assert.assertTrue(alertmsg);
+		Assert.assertTrue(alertmsg,Constants.UPDATETHENEWS);
 	}
 }

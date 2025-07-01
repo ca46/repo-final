@@ -2,16 +2,16 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="ParallelTestingclass2" parallel="classes" thread-count="5">
 
-  <!-- Listener applied to the entire suite -->
-  <listeners>
-    <listener class-name="generateReport.Listeners" />
-  </listeners>
+	<!-- Listener applied to the entire suite -->
+	<listeners>
+		<listener class-name="generateReport.Listeners" />
+	</listeners>
 
-  <test thread-count="5" name="Test">
-    <parameter name="browser" value="chrome" /> 
-    <classes>
-      <class name="testscript.LogoutTest" />
-    </classes>
-  </test>
+	<test thread-count="5" name="Test">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class name="testscript.LogoutTest" />
+		</classes>
+	</test>
 
 </suite>
