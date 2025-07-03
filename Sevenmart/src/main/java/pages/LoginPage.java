@@ -25,16 +25,19 @@ public class LoginPage {
 		PageFactory.initElements(driver, this);
 	}
 
-	public void enterTheUserName(String username) {
+	public LoginPage enterTheUserName(String username) {
 		uname.sendKeys(username);
+		return this;
 	}
 
-	public void enterThePassword(String password) {
+	public LoginPage  enterThePassword(String password) {
 		pword.sendKeys(password);
+		return this;
 	}
 
-	public void clickTheSignInButton() {
+	public HomePage clickTheSignInButton() {
 		signin.click();
+		return new HomePage(driver);
 	}
 
 	public boolean isDashBoardDisplayed() {

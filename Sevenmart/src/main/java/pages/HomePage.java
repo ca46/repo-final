@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LogoutPage {
+public class HomePage {
 
 	@FindBy(xpath = "//input[@placeholder='Username']")
 	WebElement usernameField;
@@ -19,20 +19,29 @@ public class LogoutPage {
 	WebElement logoutButton;
 	@FindBy(xpath = "//button[text()='Sign In']")
 	WebElement signInPageButton;
-
+	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/list-admin']//parent::div/a")
+	WebElement adminMoreInfoLink;
 	public WebDriver driver;
 
-	public LogoutPage(WebDriver driver) {
+	public HomePage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
-
-	public void openUserDropdown() {
-		profileImage.click();
+	public AdminUsersPage clickAdminMoreInfo() 
+	{
+		adminMoreInfoLink.click();
+		return new AdminUsersPage(driver);
+		
 	}
 
-	public void userLogout() {
+	public HomePage openUserDropdown() {
+		profileImage.click();
+		return this;
+	}
+
+	public HomePage userLogout() {
 		logoutButton.click();
+		return this;
 	}
 
 	public boolean isSignInPageDisplayed() {

@@ -6,20 +6,25 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import constants.Constants;
+import pages.HomePage;
 import pages.LoginPage;
 import utilities.ExcelUtility;
 
 public class LoginTest extends Base {
-
+	
+    public HomePage homepage;
+    
 	@Test(retryAnalyzer = retry.Retry.class, groups = { "Regression" },description="LOGINWITHINCORRECTUSERNAMEANDPASSWORD")
 	public void verifyTheUserIsAbleToLoginUsingValidCredential() throws IOException {
 		String username = ExcelUtility.getStringData(1, 0, "loginpage");
 		String password = ExcelUtility.getStringData(1, 1, "loginpage");
 
 		LoginPage loginpage = new LoginPage(driver);
-		loginpage.enterTheUserName(username);
+		loginpage.enterTheUserName(username).enterThePassword(password);
+		homepage=loginpage.clickTheSignInButton();
+		/*loginpage.enterTheUserName(username);
 		loginpage.enterThePassword(password);
-		loginpage.clickTheSignInButton();
+		loginpage.clickTheSignInButton();*/
 
 		boolean dashboardLoaded = loginpage.isDashBoardDisplayed();
 		Assert.assertTrue(dashboardLoaded,Constants.LOGINWITHVALIDCREDITIONAL);

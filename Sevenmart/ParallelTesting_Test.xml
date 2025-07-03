@@ -7,7 +7,7 @@
 	</listeners>
 	<test name="ChromeTest">
 		<classes>
-			<class name="testscript.LogoutTest"></class>
+			<class name="testscript.HomePageTest"></class>
 
 		</classes>
 	</test> <!--
