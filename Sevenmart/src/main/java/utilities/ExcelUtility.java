@@ -10,15 +10,15 @@ import constants.Constants;
 
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
-public class ExcelUtility 
-{
-	
+
+public class ExcelUtility {
+
 	static FileInputStream f;
 	static XSSFWorkbook wb;
 	static XSSFSheet sh;
-public static String getStringData(int i, int j, String sheet) throws IOException  
-	{  
-		String filepath = Constants.TESTDATAFILE;		
+
+	public static String getStringData(int i, int j, String sheet) throws IOException {
+		String filepath = Constants.TESTDATAFILE;
 		f = new FileInputStream(filepath);
 		wb = new XSSFWorkbook(f);
 		sh = wb.getSheet(sheet);
@@ -26,9 +26,9 @@ public static String getStringData(int i, int j, String sheet) throws IOExceptio
 		Cell c = r.getCell(j);
 		return c.getStringCellValue();
 	}
-public static String getIntegerData(int i, int j, String sheet) throws IOException
-	{
-		String filepath = Constants.TESTDATAFILE;		
+
+	public static String getIntegerData(int i, int j, String sheet) throws IOException {
+		String filepath = Constants.TESTDATAFILE;
 		f = new FileInputStream(filepath);
 		wb = new XSSFWorkbook(f);
 		sh = wb.getSheet(sheet);
@@ -36,6 +36,6 @@ public static String getIntegerData(int i, int j, String sheet) throws IOExcepti
 		Cell c = r.getCell(j);
 		int x = (int) c.getNumericCellValue();
 		return String.valueOf(x);
-		
+
 	}
 }
