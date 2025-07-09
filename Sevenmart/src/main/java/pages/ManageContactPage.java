@@ -14,8 +14,6 @@ public class ManageContactPage {
 	WebElement passwordField;
 	@FindBy(xpath = "//button[@type='submit']")
 	WebElement signInButton;
-	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/list-contact']//parent::li/a")
-	WebElement contactMoreInfoLink;
 	@FindBy(xpath = "//i[@class='fas fa-edit']//parent::a/i")
 	WebElement editContactIcon;
 	@FindBy(xpath = "//input[@id='phone']")
@@ -35,33 +33,33 @@ public class ManageContactPage {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
-
-	public void clickContactMoreInfo() {
-		contactMoreInfoLink.click();
-	}
-
-	public void clickEditContactIcon() {
+	public ManageContactPage clickEditContactIcon() {
 		editContactIcon.click();
+		return this;
 	}
 
-	public void updatePhoneNumber(String phoneNumber) {
+	public ManageContactPage updatePhoneNumber(String phoneNumber) {
 		phoneInput.clear();
 		phoneInput.sendKeys(phoneNumber);
+		return this;
 	}
 
-	public void updateEmail(String email) {
+	public ManageContactPage updateEmail(String email) {
 		emailInput.clear();
 		emailInput.sendKeys(email);
+		return this;
 	}
 
-	public void updateAddress(String address) {
+	public ManageContactPage updateAddress(String address) {
 		addressInput.clear();
 		addressInput.sendKeys(address);
+		return this;
 	}
 
-	public void clickUpdateButton() {
+	public ManageContactPage clickUpdateButton() {
 		PageUtility pageutility = new PageUtility();
 		pageutility.javaSriptClick(driver, updateButton);
+		return this;
 	}
 
 	public boolean isSuccessAlertDisplayed() {

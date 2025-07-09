@@ -4,12 +4,14 @@ import java.io.IOException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.AdminUsersPage;
+import pages.HomePage;
 import pages.LoginPage;
 import utilities.ExcelUtility;
 import utilities.FakerUtility;
 
 public class AdminUsersTest extends Base {
-
+public AdminUsersPage adminuserspage;
+public HomePage homepage;
 	@Test(retryAnalyzer = retry.Retry.class)
 	public void verifyAdminUserCreation() throws IOException {
 
@@ -17,7 +19,21 @@ public class AdminUsersTest extends Base {
 		String password = ExcelUtility.getStringData(1, 1, "loginpage");
 
 		LoginPage loginpage = new LoginPage(driver);
-		loginpage.enterTheUserName(username);
+		loginpage.enterTheUserName(username).enterThePassword(password);
+		homepage=loginpage.clickTheSignInButton();
+		adminuserspage=homepage.clickAdminMoreInfo();
+		FakerUtility faker = new FakerUtility();
+		String newAdminUser = faker.creatARandomFirstName();
+		String newAdminPass = faker.creatARandomFirstName();
+		adminuserspage.clickAddNewAdmin();
+		adminuserspage.typeAdminUsername(newAdminUser);
+		adminuserspage.typeAdminPassword(newAdminPass);
+		adminuserspage.chooseUserType();
+		adminuserspage.clickCreateAdmin();
+		
+		
+		
+		/*loginpage.enterTheUserName(username);
 		loginpage.enterThePassword(password);
 		loginpage.clickTheSignInButton();
 
@@ -32,9 +48,9 @@ public class AdminUsersTest extends Base {
 		adminPage.typeAdminUsername(newAdminUser);
 		adminPage.typeAdminPassword(newAdminPass);
 		adminPage.chooseUserType();
-		adminPage.clickCreateAdmin();
+		adminPage.clickCreateAdmin();*/
 
-		Assert.assertTrue(adminPage.isSuccessAlertDisplayed());
+		Assert.assertTrue(adminuserspage.isSuccessAlertDisplayed());
 	}
 
 	@Test(retryAnalyzer = retry.Retry.class)
@@ -44,15 +60,20 @@ public class AdminUsersTest extends Base {
 		String password = ExcelUtility.getStringData(1, 1, "loginpage");
 
 		LoginPage loginpage = new LoginPage(driver);
-		loginpage.enterTheUserName(username);
-		loginpage.enterThePassword(password);
+		loginpage.enterTheUserName(username).enterThePassword(password);
+		homepage=loginpage.clickTheSignInButton();
+		adminuserspage=homepage.clickAdminMoreInfo();
+		adminuserspage.clickEditAdmin();
+		adminuserspage.clickUpdateAdmin();
+		
+		/*loginpage.enterThePassword(password);
 		loginpage.clickTheSignInButton();
 
 		AdminUsersPage adminPage = new AdminUsersPage(driver);
 		adminPage.clickAdminMoreInfo();
 		adminPage.clickEditAdmin();
-		adminPage.clickUpdateAdmin();
+		adminPage.clickUpdateAdmin();*/
 
-		Assert.assertTrue(adminPage.isUpdateAlertDisplayed());
+		Assert.assertTrue(adminuserspage.isUpdateAlertDisplayed());
 	}
 }

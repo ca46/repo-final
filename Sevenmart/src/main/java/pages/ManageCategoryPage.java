@@ -1,13 +1,9 @@
 package pages;
 
-import java.awt.AWTException;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.Wait;
-
 import constants.Constants;
 
 import utilities.FileuploadUtility;
@@ -21,8 +17,6 @@ public class ManageCategoryPage {
 	WebElement pword;
 	@FindBy(xpath = "//button[@type='submit']")
 	WebElement signin;
-	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/list-category']//parent::li/a")
-	WebElement moreinfo;
 	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/Category/add']")
 	WebElement newbtn;
 	@FindBy(xpath = "//input[@id='category']")
@@ -43,37 +37,38 @@ public class ManageCategoryPage {
 		PageFactory.initElements(driver, this);
 	}
 
-	public void moreInfoManageCategory() {
-		PageUtility pageutility = new PageUtility();
-		pageutility.javaSriptClick(driver, moreinfo);
 
-	}
 
-	public void newButton() {
+	public ManageCategoryPage newButton() {
 		newbtn.click();
+		return this;
 	}
 
-	public void categoryInformation(String catgry) {
+	public ManageCategoryPage  categoryInformation(String catgry) {
 		category.clear();
 		category.sendKeys(catgry);
+		return this;
 	}
 
-	public void selectGroup() {
+	public ManageCategoryPage selectGroup() {
 		selectgrp.click();
+		return this;
 
 	}
 
-	public void fileUpload() {
+	public ManageCategoryPage  fileUpload() {
 		WaitUtility waitutility = new WaitUtility();
 		waitutility.waitForElementToBeClickable(driver, uploadbtn);
 		FileuploadUtility fileuploadutility = new FileuploadUtility();
 		fileuploadutility.fileUploadUsingSendKeys(uploadbtn, Constants.IMAGE);
+		return this;
 	}
 
-	public void saveCategoryInformations() {
+	public ManageCategoryPage  saveCategoryInformations() {
 
 		PageUtility pageutility = new PageUtility();
 		pageutility.javaSriptClick(driver, savebtn);
+		return this;
 	}
 
 	public boolean isAlertMessageIsDisplayed() {

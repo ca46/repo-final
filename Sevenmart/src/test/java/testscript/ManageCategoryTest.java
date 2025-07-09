@@ -7,6 +7,8 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import constants.Constants;
+import pages.AdminUsersPage;
+import pages.HomePage;
 import pages.LoginPage;
 import pages.ManageCategoryPage;
 import utilities.ExcelUtility;
@@ -14,6 +16,8 @@ import utilities.FakerUtility;
 
 @Test
 public class ManageCategoryTest extends Base {
+	public ManageCategoryPage managecategorypage;
+	public HomePage homepage;
 
 	@Test(retryAnalyzer = retry.Retry.class,description="CATEGORYDISPLAY")
 	public void verifyTheUserIsAbleToAddCategoryInformations() throws IOException, AWTException {
@@ -22,7 +26,17 @@ public class ManageCategoryTest extends Base {
 		String password = ExcelUtility.getStringData(1, 1, "loginpage");
 
 		LoginPage loginpage = new LoginPage(driver);
-		loginpage.enterTheUserName(username);
+		loginpage.enterTheUserName(username).enterThePassword(password);
+		homepage=loginpage.clickTheSignInButton();
+		managecategorypage=homepage.moreInfoManageCategory();
+		managecategorypage.newButton();
+		FakerUtility fakerutility = new FakerUtility();
+		String catgry = fakerutility.creatARandomFirstName();
+		managecategorypage.categoryInformation(catgry);
+		managecategorypage.selectGroup();
+		managecategorypage.fileUpload();
+		managecategorypage.saveCategoryInformations();
+		/*loginpage.enterTheUserName(username);
 		loginpage.enterThePassword(password);
 		loginpage.clickTheSignInButton();
 
@@ -37,9 +51,9 @@ public class ManageCategoryTest extends Base {
 		managecategory.categoryInformation(catgry);
 		managecategory.selectGroup();
 		managecategory.fileUpload();
-		managecategory.saveCategoryInformations();
+		managecategory.saveCategoryInformations();*/
 
-		boolean alertmsg = managecategory.isAlertMessageIsDisplayed();
+		boolean alertmsg = managecategorypage.isAlertMessageIsDisplayed();
 		Assert.assertTrue(alertmsg,Constants.CATEGORYDISPLAY);
 	}
 }

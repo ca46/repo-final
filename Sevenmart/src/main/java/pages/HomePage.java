@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import utilities.PageUtility;
+
 public class HomePage {
 
 	@FindBy(xpath = "//input[@placeholder='Username']")
@@ -21,6 +23,14 @@ public class HomePage {
 	WebElement signInPageButton;
 	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/list-admin']//parent::div/a")
 	WebElement adminMoreInfoLink;
+	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/list-category']//parent::li/a")
+	WebElement moreinfo;
+	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/list-contact']//parent::li/a")
+	WebElement contactMoreInfoLink;
+	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/list-footertext']//parent::li/a")
+	WebElement managefootermoreinfo;
+	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/list-news']//parent::li")
+	WebElement moreinfom;
 	public WebDriver driver;
 
 	public HomePage(WebDriver driver) {
@@ -32,6 +42,24 @@ public class HomePage {
 		adminMoreInfoLink.click();
 		return new AdminUsersPage(driver);
 		
+	}
+	public ManageCategoryPage moreInfoManageCategory() {
+		PageUtility pageutility = new PageUtility();
+		pageutility.javaSriptClick(driver, moreinfo);
+		return new ManageCategoryPage(driver);
+
+	}
+	public ManageContactPage clickContactMoreInfo() {
+		contactMoreInfoLink.click();
+		return new ManageContactPage(driver);
+	}
+	public ManageFooterPage moreInfoManageFooter() {
+		managefootermoreinfo.click();
+		return new ManageFooterPage(driver);
+	}
+	public ManageNewsPage clickMoreInformation() {
+		moreinfom.click();
+		return new ManageNewsPage(driver);
 	}
 
 	public HomePage openUserDropdown() {

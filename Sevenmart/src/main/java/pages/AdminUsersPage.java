@@ -16,8 +16,6 @@ public class AdminUsersPage {
 	WebElement passwordField;
 	@FindBy(xpath = "//button[@type='submit']")
 	WebElement signInButton;
-	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/list-admin']//parent::div/a")
-	WebElement adminMoreInfoLink;
 	@FindBy(xpath = "//a[text()=' New']")
 	WebElement newAdminButton;
 	@FindBy(xpath = "//input[@id='username']")
@@ -42,41 +40,46 @@ public class AdminUsersPage {
 		PageFactory.initElements(driver, this);
 	}
 
-	public void clickAdminMoreInfo() {
-		adminMoreInfoLink.click();
-	}
+	
 
-	public void clickAddNewAdmin() {
+	public AdminUsersPage clickAddNewAdmin() {
 		newAdminButton.click();
+		return this;
 	}
 
-	public void typeAdminUsername(String user) {
+	public AdminUsersPage typeAdminUsername(String user) {
 		inputUsername.sendKeys(user);
+		return this;
 	}
 
-	public void typeAdminPassword(String pass) {
+	public AdminUsersPage typeAdminPassword(String pass) {
 		inputPassword.sendKeys(pass);
+		return this;
 	}
 
-	public void chooseUserType() {
+	public AdminUsersPage chooseUserType() {
 		PageUtility pageutility = new PageUtility();
 		pageutility.selectByIndex(userTypeDropdown, 2);
+		return this;
 	}
 
-	public void clickCreateAdmin() {
+	public AdminUsersPage clickCreateAdmin() {
 		createButton.click();
+		return this;
 	}
 
 	public boolean isSuccessAlertDisplayed() {
 		return alertmsg.isDisplayed();
 	}
 
-	public void clickEditAdmin() {
+	public AdminUsersPage clickEditAdmin() {
 		editAdminButton.click();
+		return this;
 	}
 
-	public void clickUpdateAdmin() {
+	public AdminUsersPage clickUpdateAdmin() {
 		updateButton.click();
+		return this;
 	}
 
 	public boolean isUpdateAlertDisplayed() {

@@ -22,8 +22,6 @@ public class ManageNewsPage {
 	WebElement pword;
 	@FindBy(xpath = "//button[@type='submit']")
 	WebElement signin;
-	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/list-news']//parent::li")
-	WebElement moreinfo;
 	@FindBy(xpath = "//a[text()=' New']")
 	WebElement newoption;
 	@FindBy(xpath = "//textarea[@id='news']")
@@ -42,10 +40,6 @@ public class ManageNewsPage {
 	public ManageNewsPage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
-	}
-
-	public void clickMoreInformation() {
-		moreinfo.click();
 	}
 
 	public void clickNewButton() {
