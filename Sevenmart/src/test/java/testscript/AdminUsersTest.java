@@ -25,11 +25,8 @@ public HomePage homepage;
 		FakerUtility faker = new FakerUtility();
 		String newAdminUser = faker.creatARandomFirstName();
 		String newAdminPass = faker.creatARandomFirstName();
-		adminuserspage.clickAddNewAdmin();
-		adminuserspage.typeAdminUsername(newAdminUser);
-		adminuserspage.typeAdminPassword(newAdminPass);
-		adminuserspage.chooseUserType();
-		adminuserspage.clickCreateAdmin();
+		adminuserspage.clickAddNewAdmin().typeAdminUsername(newAdminUser).typeAdminPassword(newAdminPass).clickCreateAdmin();
+		
 		
 		
 		
@@ -63,8 +60,7 @@ public HomePage homepage;
 		loginpage.enterTheUserName(username).enterThePassword(password);
 		homepage=loginpage.clickTheSignInButton();
 		adminuserspage=homepage.clickAdminMoreInfo();
-		adminuserspage.clickEditAdmin();
-		adminuserspage.clickUpdateAdmin();
+		adminuserspage.clickEditAdmin().clickUpdateAdmin();
 		
 		/*loginpage.enterThePassword(password);
 		loginpage.clickTheSignInButton();

@@ -29,11 +29,7 @@ public class ManageFooterTest extends Base {
 		loginPage.enterTheUserName(username).enterThePassword(password);
 		homepage=loginPage.clickTheSignInButton();
 		managefooterpage=homepage.moreInfoManageFooter();
-		managefooterpage.actionButton();
-		managefooterpage.addressFooterTextInfo(manageaddress);
-		managefooterpage.emailFooterTextInfo(manageemail);
-		managefooterpage.phonenumberFooterTextInfo(managephoneno);
-		managefooterpage.updateFooterTextInfo();
+		managefooterpage.actionButton().addressFooterTextInfo(manageaddress).emailFooterTextInfo(manageemail).phonenumberFooterTextInfo(managephoneno).updateFooterTextInfo();
 		
 		/*loginpage.enterTheUserName(username);
 		loginpage.enterThePassword(password);

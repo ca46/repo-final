@@ -26,9 +26,7 @@ public class ManageNewsTest extends Base {
 		loginpage.enterTheUserName(username).enterThePassword(password);
 		homepage=loginpage.clickTheSignInButton();
 		managenewspage=homepage.clickMoreInformation();
-		managenewspage.clickNewButton();
-		managenewspage.enterNewsInformation(news);
-		managenewspage.saveNews();
+		managenewspage.clickNewButton().enterNewsInformation(news).saveNews();
 		
 		/*loginpage.enterTheUserName(username);
 		loginpage.enterThePassword(password);
@@ -55,8 +53,7 @@ public class ManageNewsTest extends Base {
 		loginPage.enterTheUserName(username).enterThePassword(password);
 		homepage=loginPage.clickTheSignInButton();
 		managenewspage=homepage.clickMoreInformation();
-		managenewspage.editNews();
-		managenewspage.updateNews();
+		managenewspage.editNews().updateNews();
 		/*loginpage.enterTheUserName(username);
 		loginpage.enterThePassword(password);
 		loginpage.clickTheSignInButton();

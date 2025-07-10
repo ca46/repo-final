@@ -32,10 +32,7 @@ public class ManageCategoryTest extends Base {
 		managecategorypage.newButton();
 		FakerUtility fakerutility = new FakerUtility();
 		String catgry = fakerutility.creatARandomFirstName();
-		managecategorypage.categoryInformation(catgry);
-		managecategorypage.selectGroup();
-		managecategorypage.fileUpload();
-		managecategorypage.saveCategoryInformations();
+		managecategorypage.categoryInformation(catgry).selectGroup().fileUpload().saveCategoryInformations();
 		/*loginpage.enterTheUserName(username);
 		loginpage.enterThePassword(password);
 		loginpage.clickTheSignInButton();
@@ -54,6 +51,7 @@ public class ManageCategoryTest extends Base {
 		managecategory.saveCategoryInformations();*/
 
 		boolean alertmsg = managecategorypage.isAlertMessageIsDisplayed();
-		Assert.assertTrue(alertmsg,Constants.CATEGORYDISPLAY);
+		Assert.assertTrue(managecategorypage.isAlertMessageIsDisplayed(), Constants.CATEGORYDISPLAY);
+
 	}
 }

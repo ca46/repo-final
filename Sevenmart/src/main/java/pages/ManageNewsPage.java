@@ -28,13 +28,13 @@ public class ManageNewsPage {
 	WebElement enternews;
 	@FindBy(xpath = "//button[@name='create']")
 	WebElement save;
-	@FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']")
+	@FindBy(xpath = " //div[@class='alert alert-success alert-dismissible']")
 	WebElement alert;
 	@FindBy(xpath = "//table/tbody/tr[3]/td[2]/a[1]/i")
 	WebElement edit;
 	@FindBy(xpath = "//button[@name='update']")
 	WebElement update;
-	@FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']")
+	@FindBy(xpath = "(//div[contains(@class, 'alert') and contains(@class, 'alert-success') and contains(@class, 'alert-dismissible')])[1]")
 	WebElement updateAlert;
 
 	public ManageNewsPage(WebDriver driver) {
@@ -42,32 +42,38 @@ public class ManageNewsPage {
 		PageFactory.initElements(driver, this);
 	}
 
-	public void clickNewButton() {
+	public ManageNewsPage clickNewButton() {
 		newoption.click();
+		return this;
 	}
 
-	public void enterNewsInformation(String news) {
+	public ManageNewsPage enterNewsInformation(String news) {
 		enternews.clear();
 		enternews.sendKeys(news);
+		return this;
 	}
 
-	public void saveNews() {
+	public ManageNewsPage saveNews() {
 		save.click();
+		return this;
 	}
 
 	public boolean displayAlertMessage() {
 		return alert.isDisplayed();
 	}
 
-	public void editNews() {
+	public ManageNewsPage editNews() {
 		edit.click();
+		return this;
 	}
 
-	public void updateNews() {
+	public ManageNewsPage updateNews() {
 		update.click();
+		return this;
 	}
 
 	public boolean displayAlert() {
 		return updateAlert.isDisplayed();
 	}
+	
 }

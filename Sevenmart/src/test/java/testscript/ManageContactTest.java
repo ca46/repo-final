@@ -32,11 +32,7 @@ public class ManageContactTest extends Base {
 		loginPage.enterTheUserName(username).enterThePassword(password);
 		homepage=loginPage.clickTheSignInButton();
 		managecontactpage=homepage.clickContactMoreInfo();
-		managecontactpage.clickEditContactIcon();
-		managecontactpage.updatePhoneNumber(phone);
-		managecontactpage.updateEmail(email);
-		managecontactpage.updateAddress(address);
-		managecontactpage.clickUpdateButton();
+		managecontactpage.clickEditContactIcon().updatePhoneNumber(phone).updateEmail(email).updateAddress(address).clickUpdateButton();
 		
 		/*loginPage.enterTheUserName(username);
 		loginPage.enterThePassword(password);
@@ -67,8 +63,8 @@ public class ManageContactTest extends Base {
 		loginPage.enterTheUserName(username).enterThePassword(password);
 		homepage=loginPage.clickTheSignInButton();
 		managecontactpage=homepage.clickContactMoreInfo();
-		managecontactpage.clickEditContactIcon();
-		managecontactpage.clickUpdateButton();
+		managecontactpage.clickEditContactIcon().clickUpdateButton();
+		
 		
 		/*loginPage.enterTheUserName(username);
 		loginPage.enterThePassword(password);
