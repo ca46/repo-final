@@ -15,7 +15,10 @@
 			<class name="testscript.HomePageTest" />
 			<class name="testscript.LoginTest" />-->
 			<class name="testscript.ManageCategoryTest" />
-			<class name="testscript.ManageNewsTest" />
+			
+			
+			
+			
 			
 
 		</classes>

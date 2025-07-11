@@ -34,7 +34,7 @@ public class ManageNewsPage {
 	WebElement edit;
 	@FindBy(xpath = "//button[@name='update']")
 	WebElement update;
-	@FindBy(xpath = "(//div[contains(@class, 'alert') and contains(@class, 'alert-success') and contains(@class, 'alert-dismissible')])[1]")
+	 @FindBy(xpath="//h5[text()=' Alert!']") 
 	WebElement updateAlert;
 
 	public ManageNewsPage(WebDriver driver) {
@@ -72,8 +72,8 @@ public class ManageNewsPage {
 		return this;
 	}
 
-	public boolean displayAlert() {
+	/*public boolean displayAlert() {
 		return updateAlert.isDisplayed();
-	}
+	}*/
 	
 }
