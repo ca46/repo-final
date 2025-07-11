@@ -72,8 +72,8 @@ public class ManageNewsPage {
 		return this;
 	}
 
-	/*public boolean displayAlert() {
+	public boolean displayAlert() {
 		return updateAlert.isDisplayed();
-	}*/
+	}
 	
 }

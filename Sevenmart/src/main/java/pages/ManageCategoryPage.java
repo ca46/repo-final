@@ -82,7 +82,7 @@ public class ManageCategoryPage {
 		return this;
 	}
 
-	/*public boolean isAlertMessageIsDisplayed() {
+	public boolean isAlertMessageIsDisplayed() {
 		return alertmsg.isDisplayed();
-	}*/
+	}
 }

@@ -50,8 +50,8 @@ public class ManageCategoryTest extends Base {
 		managecategory.fileUpload();
 		managecategory.saveCategoryInformations();*/
 
-		/*boolean alertmsg = managecategorypage.isAlertMessageIsDisplayed();
-		Assert.assertTrue(alertmsg, Constants.CATEGORYDISPLAY);*/
+		boolean alertmsg = managecategorypage.isAlertMessageIsDisplayed();
+		Assert.assertTrue(alertmsg, Constants.CATEGORYDISPLAY);
 
 	}
 }
